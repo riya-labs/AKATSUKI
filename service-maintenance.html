@@ -1,0 +1,467 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="株式会社あかつき空調の冷媒配管工事。配管ルート設計から銅管ろう付け・断熱・気密試験まで一貫対応。空調システムの性能を最大限に引き出す高精度施工を行います。">
+    <title>冷媒配管工事 | 株式会社あかつき空調</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .header {
+            background: rgba(12,72,148,.96);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 24px rgba(0,0,0,.25);
+        }
+
+        /* ========== Overview ========== */
+        .svc-overview {
+            padding-top: calc(var(--header) + 72px);
+            padding-bottom: 100px;
+            background: var(--white);
+        }
+        .svc-overview__page-title {
+            font-family: var(--serif);
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: .06em;
+            margin-bottom: 48px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+        .svc-overview__page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 48px;
+            height: 2px;
+            background: var(--orange);
+        }
+        @media (max-width: 768px) {
+            .svc-overview {
+                padding-top: calc(var(--header) + 48px);
+                padding-bottom: 72px;
+            }
+        }
+        .svc-overview__inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .svc-overview__icon-wrap {
+            border-radius: var(--r-lg);
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            box-shadow: var(--sh-lg);
+        }
+        .svc-overview__icon-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .svc-overview__lead {
+            font-family: var(--serif);
+            font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.75;
+            margin-bottom: 24px;
+            letter-spacing: .04em;
+        }
+        .svc-overview__text {
+            font-size: .95rem;
+            color: var(--text-2);
+            line-height: 2.1;
+        }
+
+        /* ========== Menu ========== */
+        .svc-menu {
+            padding: 100px 0;
+            background: var(--bg);
+        }
+        .svc-menu__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .svc-menu-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 36px 28px;
+            box-shadow: var(--sh-sm);
+            transition: transform var(--ease), box-shadow var(--ease);
+        }
+        .svc-menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sh-md);
+        }
+        .svc-menu-card__icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(232,104,42,.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .svc-menu-card__title {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+            letter-spacing: .03em;
+        }
+        .svc-menu-card__text {
+            font-size: .87rem;
+            color: var(--text-2);
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+        .svc-menu-card__list {
+            border-top: 1px solid var(--border);
+            padding-top: 14px;
+        }
+        .svc-menu-card__list li {
+            font-size: .82rem;
+            color: var(--gray);
+            padding: 4px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .svc-menu-card__list li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--orange);
+            margin-top: 7px;
+            flex-shrink: 0;
+        }
+
+        /* ========== Benefits ========== */
+        .svc-benefits {
+            padding: 100px 0;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+        .svc-benefits::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(100,190,255,.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(100,190,255,.06) 1px, transparent 1px);
+            background-size: 56px 56px;
+        }
+        .svc-benefits .container { position: relative; z-index: 1; }
+        .svc-benefits .section-title--light { color: var(--white); }
+        .svc-benefits__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .benefit-item {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(100,190,255,.18);
+            border-radius: var(--r-lg);
+            padding: 36px 28px;
+            text-align: center;
+            transition: background var(--ease), border-color var(--ease);
+        }
+        .benefit-item:hover {
+            background: rgba(255,255,255,.1);
+            border-color: rgba(100,190,255,.4);
+        }
+        .benefit-item__num {
+            font-family: var(--serif);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--orange);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .benefit-item__title {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 14px;
+            letter-spacing: .04em;
+        }
+        .benefit-item__text {
+            font-size: .84rem;
+            color: rgba(255,255,255,.6);
+            line-height: 1.85;
+        }
+
+        /* ========== Responsive ========== */
+        @media (max-width: 1024px) {
+            .svc-benefits__grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .svc-overview,
+            .svc-menu,
+            .svc-benefits { padding: 72px 0; }
+
+            .svc-overview__inner { grid-template-columns: 1fr; gap: 36px; }
+            .svc-overview__icon-wrap { max-width: 260px; margin: 0 auto; }
+            .svc-menu__grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 640px) {
+            .svc-benefits__grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .svc-menu__grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header__inner container">
+            <a href="index.html" class="header__logo">
+                <span class="logo__icon">
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                        <circle cx="17" cy="17" r="16" stroke="#E8682A" stroke-width="2"/>
+                        <path d="M8 21 C11 12, 23 12, 26 21" stroke="#E8682A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                        <path d="M5 25 C9 14, 25 14, 29 25" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.35"/>
+                        <circle cx="17" cy="10" r="2.5" fill="#E8682A"/>
+                    </svg>
+                </span>
+                <span class="logo__text">
+                    <span class="logo__name">株式会社あかつき空調</span>
+                </span>
+            </a>
+
+            <nav class="header__nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="index.html#services" class="nav__link nav__link--active">事業内容</a></li>
+                    <li><a href="index.html#features" class="nav__link">選ばれる理由</a></li>
+                    <li><a href="index.html#cases" class="nav__link">施工事例</a></li>
+                    <li><a href="about.html" class="nav__link">会社概要</a></li>
+                    <li><a href="index.html#contact" class="nav__link">お問い合わせ</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Overview -->
+        <section class="svc-overview">
+            <div class="container">
+                <h1 class="svc-overview__page-title">冷媒配管工事</h1>
+                <div class="svc-overview__inner">
+                    <div class="svc-overview__icon-wrap reveal">
+                        <img src="images/冷媒配管.jpg" alt="冷媒配管工事の様子">
+                    </div>
+                    <div class="reveal">
+                        <div class="section-header" style="text-align:left; margin-bottom:32px;">
+                            <span class="section-label">OVERVIEW</span>
+                        </div>
+                        <p class="svc-overview__lead">
+                            空調の性能を最大限に引き出す、<br>
+                            確かな冷媒配管施工。
+                        </p>
+                        <p class="svc-overview__text">
+                            冷媒配管は空調システムの心臓部です。配管の精度や施工品質が、設備全体の冷暖房性能・省エネ効果・耐久性を大きく左右します。あかつき空調では配管ルートの最適化から銅管ろう付け・断熱施工・気密試験まで、一貫した高品質施工で長期安定稼働を支えます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu -->
+        <section class="svc-menu">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">MENU</span>
+                    <h2 class="section-title">施工内容</h2>
+                    <p class="section-desc">配管設計から試験・充填まで一貫対応します</p>
+                </div>
+
+                <div class="svc-menu__grid">
+                    <div class="svc-menu-card reveal">
+                        <div class="svc-menu-card__icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                <path d="M4 14 Q4 8 10 8 Q16 8 16 14 Q16 20 22 20" stroke="#E8682A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                                <rect x="20" y="17" width="6" height="6" rx="1.5" stroke="#E8682A" stroke-width="1.8"/>
+                                <rect x="2" y="11" width="4" height="6" rx="1" stroke="#E8682A" stroke-width="1.8"/>
+                                <line x1="4" y1="5" x2="8" y2="9" stroke="#E8682A" stroke-width="1.6" stroke-linecap="round"/>
+                                <line x1="14" y1="5" x2="14" y2="8" stroke="#E8682A" stroke-width="1.6" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="svc-menu-card__title">配管設計・ルート選定</h3>
+                        <p class="svc-menu-card__text">設備容量や建物構造に合わせた最適な配管ルートを設計し、施工効率と省エネ性を両立します。</p>
+                        <ul class="svc-menu-card__list">
+                            <li>設備容量に応じた管径の選定</li>
+                            <li>最適ルート設計・スリーブ工事</li>
+                            <li>省エネ・省スペースを考慮した設計</li>
+                            <li>既存配管との整合確認</li>
+                        </ul>
+                    </div>
+                    <div class="svc-menu-card reveal">
+                        <div class="svc-menu-card__icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                <path d="M6 20 L10 10 L14 16 L18 8 L22 20" stroke="#E8682A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="22" cy="8" r="3" stroke="#E8682A" stroke-width="1.8"/>
+                                <line x1="6" y1="23" x2="22" y2="23" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="svc-menu-card__title">銅管ろう付け・断熱施工</h3>
+                        <p class="svc-menu-card__text">熟練技術者による窒素ブロー溶接で冷媒漏れを防ぎ、断熱材の丁寧な施工で省エネ性能を維持します。</p>
+                        <ul class="svc-menu-card__list">
+                            <li>銅管ろう付け（窒素ブロー溶接）</li>
+                            <li>継手・バルブ類の取付</li>
+                            <li>断熱材の巻き付け施工</li>
+                            <li>吊り金具・保護材の取付</li>
+                        </ul>
+                    </div>
+                    <div class="svc-menu-card reveal">
+                        <div class="svc-menu-card__icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                <circle cx="14" cy="14" r="9" stroke="#E8682A" stroke-width="1.8"/>
+                                <path d="M9 14 L12 17 L19 10" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="22" cy="7" r="3" fill="#E8682A" fill-opacity="0.3" stroke="#E8682A" stroke-width="1.6"/>
+                            </svg>
+                        </div>
+                        <h3 class="svc-menu-card__title">気密試験・真空引き・冷媒充填</h3>
+                        <p class="svc-menu-card__text">施工後は窒素ガスによる加圧試験・真空引きで漏えいがないことを確認してから冷媒を充填します。</p>
+                        <ul class="svc-menu-card__list">
+                            <li>窒素ガスによる加圧気密試験</li>
+                            <li>真空ポンプによる真空引き</li>
+                            <li>冷媒充填・試運転・動作確認</li>
+                            <li>試験結果の記録・報告書提出</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits -->
+        <section class="svc-benefits">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label section-label--light">POINT</span>
+                    <h2 class="section-title section-title--light">あかつき空調の冷媒配管工事の強み</h2>
+                </div>
+                <div class="svc-benefits__grid reveal">
+                    <div class="benefit-item">
+                        <p class="benefit-item__num">01</p>
+                        <h3 class="benefit-item__title">高精度施工</h3>
+                        <p class="benefit-item__text">熟練技術者による精密な溶接・接続で、冷媒漏れのない長期安定した配管システムを実現します。</p>
+                    </div>
+                    <div class="benefit-item">
+                        <p class="benefit-item__num">02</p>
+                        <h3 class="benefit-item__title">省エネ性能の維持</h3>
+                        <p class="benefit-item__text">適切な配管設計と断熱施工により、冷暖房効率を最大限に引き出しランニングコストを抑えます。</p>
+                    </div>
+                    <div class="benefit-item">
+                        <p class="benefit-item__num">03</p>
+                        <h3 class="benefit-item__title">法令対応</h3>
+                        <p class="benefit-item__text">フロン排出抑制法に基づく適切な施工管理で、コンプライアンスに沿った安全な工事を実施します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="contact">
+            <div class="contact__glow"></div>
+            <div class="container">
+                <div class="contact__inner reveal">
+                    <span class="section-label">CONTACT</span>
+                    <h2 class="contact__title">まずは、お気軽にご相談ください。</h2>
+                    <p class="contact__desc">
+                        冷媒配管工事のご質問、お見積もりのご依頼など、<br class="pc-only">
+                        お気軽にお問い合わせください。
+                    </p>
+                    <a href="index.html#contact" class="btn btn--orange btn--lg">お問い合わせはこちら</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__main">
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo">
+                        <svg width="30" height="30" viewBox="0 0 34 34" fill="none">
+                            <circle cx="17" cy="17" r="16" stroke="#E8682A" stroke-width="2"/>
+                            <path d="M8 21 C11 12, 23 12, 26 21" stroke="#E8682A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                            <circle cx="17" cy="10" r="2.5" fill="#E8682A"/>
+                        </svg>
+                        <span class="footer__logo-text">
+                            <span class="footer__logo-name">株式会社あかつき空調</span>
+                        </span>
+                    </a>
+                    <p class="footer__desc">空調設備工事を通じて、<br>多様な施設の快適で安全な空間づくりを<br>長期にわたり支えています。</p>
+                </div>
+
+                <nav class="footer__nav">
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">サービス</h4>
+                        <ul>
+                            <li><a href="service-construction.html">業務用エアコン設置工事</a></li>
+                            <li><a href="service-maintenance.html">冷媒配管工事</a></li>
+                            <li><a href="service-freon.html">フロンガス回収工事</a></li>
+                            <li><a href="index.html#cases">施工事例</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">会社情報</h4>
+                        <ul>
+                            <li><a href="about.html#message">代表挨拶</a></li>
+                            <li><a href="about.html#company">会社概要</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">お問い合わせ</h4>
+                        <ul>
+                            <li><a href="index.html#contact">お見積もり依頼</a></li>
+                            <li><a href="recruit.html">採用情報</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copy">&copy; 株式会社あかつき空調 All Rights Reserved.</p>
+                <ul class="footer__links">
+                    <li><a href="privacy.html">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

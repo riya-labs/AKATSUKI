@@ -1,0 +1,530 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="株式会社あかつき空調の業務用エアコン設置工事。オフィス・工場・商業施設など、あらゆる規模の空調設備の設計から施工まで一括対応します。">
+    <title>業務用エアコン設置工事 | 株式会社あかつき空調</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .header {
+            background: rgba(12,72,148,.96);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 24px rgba(0,0,0,.25);
+        }
+
+        /* ========== Overview ========== */
+        .svc-overview {
+            padding-top: calc(var(--header) + 72px);
+            padding-bottom: 100px;
+            background: var(--white);
+        }
+        .svc-overview__page-title {
+            font-family: var(--serif);
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: .06em;
+            margin-bottom: 48px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+        .svc-overview__page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 48px;
+            height: 2px;
+            background: var(--orange);
+        }
+        @media (max-width: 768px) {
+            .svc-overview {
+                padding-top: calc(var(--header) + 48px);
+                padding-bottom: 72px;
+            }
+        }
+        .svc-overview__inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .svc-overview__icon-wrap {
+            border-radius: var(--r-lg);
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            box-shadow: var(--sh-lg);
+        }
+        .svc-overview__icon-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .svc-overview__lead {
+            font-family: var(--serif);
+            font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.75;
+            margin-bottom: 24px;
+            letter-spacing: .04em;
+        }
+        .svc-overview__text {
+            font-size: .95rem;
+            color: var(--text-2);
+            line-height: 2.1;
+        }
+
+        /* ========== Items ========== */
+        .svc-items {
+            padding: 100px 0;
+            background: var(--bg);
+        }
+        .svc-items__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .svc-item-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 36px 28px;
+            box-shadow: var(--sh-sm);
+            transition: transform var(--ease), box-shadow var(--ease);
+        }
+        .svc-item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sh-md);
+        }
+        .svc-item-card__icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(232,104,42,.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .svc-item-card__title {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+            letter-spacing: .03em;
+        }
+        .svc-item-card__text {
+            font-size: .87rem;
+            color: var(--text-2);
+            line-height: 1.9;
+        }
+
+        /* ========== Facilities ========== */
+        .svc-facilities {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        .svc-facilities__grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .facility-tag {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 18px 12px;
+            text-align: center;
+            font-size: .85rem;
+            font-weight: 600;
+            color: var(--navy);
+            letter-spacing: .03em;
+            transition: background var(--ease), border-color var(--ease), color var(--ease);
+        }
+        .facility-tag:hover {
+            background: var(--navy);
+            border-color: var(--navy);
+            color: var(--white);
+        }
+
+        /* ========== Flow ========== */
+        .svc-flow {
+            padding: 100px 0;
+            background: var(--bg);
+        }
+        .svc-flow__steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .svc-flow__steps::before {
+            content: '';
+            position: absolute;
+            top: 36px;
+            left: calc(10% + 18px);
+            right: calc(10% + 18px);
+            height: 2px;
+            background: linear-gradient(to right, var(--orange), var(--navy-2));
+        }
+        .flow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 8px;
+            position: relative;
+            z-index: 1;
+        }
+        .flow-step__num {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            box-shadow: var(--sh-sm);
+            transition: border-color var(--ease), box-shadow var(--ease);
+        }
+        .flow-step:hover .flow-step__num {
+            border-color: var(--orange);
+            box-shadow: 0 0 0 4px rgba(232,104,42,.12);
+        }
+        .flow-step__num span:first-child {
+            font-size: .6rem;
+            font-weight: 700;
+            color: var(--orange);
+            letter-spacing: .1em;
+        }
+        .flow-step__num span:last-child {
+            font-family: var(--serif);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1;
+        }
+        .flow-step__label {
+            font-size: .82rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: .03em;
+            margin-bottom: 8px;
+        }
+        .flow-step__desc {
+            font-size: .75rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ========== Responsive ========== */
+        @media (max-width: 1024px) {
+            .svc-facilities__grid { grid-template-columns: repeat(3, 1fr); }
+            .svc-flow__steps { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+            .svc-flow__steps::before { display: none; }
+        }
+        @media (max-width: 768px) {
+            .page-hero { padding: calc(var(--header) + 48px) 28px 60px; }
+            .svc-overview,
+            .svc-items,
+            .svc-facilities,
+            .svc-flow { padding: 72px 0; }
+
+            .svc-overview__inner { grid-template-columns: 1fr; gap: 36px; }
+            .svc-overview__icon-wrap { max-width: 260px; margin: 0 auto; }
+            .svc-items__grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .svc-facilities__grid { grid-template-columns: repeat(2, 1fr); }
+            .svc-flow__steps { grid-template-columns: 1fr 1fr; gap: 20px; }
+        }
+        @media (max-width: 480px) {
+            .page-hero { padding: calc(var(--header) + 36px) 20px 48px; }
+            .svc-facilities__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .svc-flow__steps { grid-template-columns: 1fr; gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header__inner container">
+            <a href="index.html" class="header__logo">
+                <span class="logo__icon">
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                        <circle cx="17" cy="17" r="16" stroke="#E8682A" stroke-width="2"/>
+                        <path d="M8 21 C11 12, 23 12, 26 21" stroke="#E8682A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                        <path d="M5 25 C9 14, 25 14, 29 25" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.35"/>
+                        <circle cx="17" cy="10" r="2.5" fill="#E8682A"/>
+                    </svg>
+                </span>
+                <span class="logo__text">
+                    <span class="logo__name">株式会社あかつき空調</span>
+                </span>
+            </a>
+
+            <nav class="header__nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="index.html#services" class="nav__link nav__link--active">事業内容</a></li>
+                    <li><a href="index.html#features" class="nav__link">選ばれる理由</a></li>
+                    <li><a href="index.html#cases" class="nav__link">施工事例</a></li>
+                    <li><a href="about.html" class="nav__link">会社概要</a></li>
+                    <li><a href="index.html#contact" class="nav__link">お問い合わせ</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Overview -->
+        <section class="svc-overview">
+            <div class="container">
+                <h1 class="svc-overview__page-title">業務用エアコン設置工事</h1>
+                <div class="svc-overview__inner">
+                    <div class="svc-overview__icon-wrap reveal">
+                        <img src="images/業務用エアコン.jpg" alt="業務用エアコン設置工事の様子">
+                    </div>
+                    <div class="reveal">
+                        <div class="section-header" style="text-align:left; margin-bottom:32px;">
+                            <span class="section-label">OVERVIEW</span>
+                        </div>
+                        <p class="svc-overview__lead">
+                            あらゆる規模・用途に対応する<br>
+                            業務用エアコン設置工事を提供します。
+                        </p>
+                        <p class="svc-overview__text">
+                            オフィス・工場・商業施設・医療施設など、建物の用途や規模に応じた最適な空調設備の設計・施工を行います。新設から既存設備の更新・省エネ化まで、豊富な実績と高い技術力でお客様のニーズにお応えします。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Items -->
+        <section class="svc-items">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">SERVICES</span>
+                    <h2 class="section-title">対応工事の内容</h2>
+                    <p class="section-desc">お客様の設備状況やご要望に合わせて最適な工事をご提案します</p>
+                </div>
+
+                <div class="svc-items__grid">
+                    <div class="svc-item-card reveal">
+                        <div class="svc-item-card__icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                <rect x="2" y="7" width="24" height="10" rx="3" stroke="#E8682A" stroke-width="1.8"/>
+                                <line x1="8" y1="17" x2="8" y2="22" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="14" y1="17" x2="14" y2="22" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="20" y1="17" x2="20" y2="22" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="4" y1="22" x2="24" y2="22" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="svc-item-card__title">業務用エアコン設置・更新</h3>
+                        <p class="svc-item-card__text">天井カセット型・床置き型・ビルトイン型など、建物の構造や用途に合わせた業務用エアコンの新規設置および老朽化設備の更新工事を行います。</p>
+                    </div>
+                    <div class="svc-item-card reveal">
+                        <div class="svc-item-card__icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                <circle cx="14" cy="14" r="10" stroke="#E8682A" stroke-width="1.8"/>
+                                <circle cx="14" cy="14" r="4" stroke="#E8682A" stroke-width="1.8"/>
+                                <line x1="14" y1="4" x2="14" y2="10" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="14" y1="18" x2="14" y2="24" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="4" y1="14" x2="10" y2="14" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="18" y1="14" x2="24" y2="14" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="svc-item-card__title">マルチエアコンシステム</h3>
+                        <p class="svc-item-card__text">1台の室外機に複数の室内機を接続するマルチシステムの設計・施工。フロアや部屋ごとに個別制御でき、省スペース・省エネを実現します。</p>
+                    </div>
+                    <div class="svc-item-card reveal">
+                        <div class="svc-item-card__icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                <path d="M14 3 L17 10 L24 10 L18.5 14.5 L20.5 21.5 L14 17.5 L7.5 21.5 L9.5 14.5 L4 10 L11 10 Z" stroke="#E8682A" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="svc-item-card__title">省エネ設備への切り替え</h3>
+                        <p class="svc-item-card__text">既存の旧型設備を最新の高効率エアコンへ更新することで、ランニングコストを大幅に削減。補助金制度の活用もご案内します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Facilities -->
+        <section class="svc-facilities">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">FACILITY</span>
+                    <h2 class="section-title">対応施設</h2>
+                    <p class="section-desc">さまざまな用途・規模の施設に対応しています</p>
+                </div>
+                <div class="svc-facilities__grid reveal">
+                    <div class="facility-tag">オフィスビル</div>
+                    <div class="facility-tag">工場・倉庫</div>
+                    <div class="facility-tag">商業施設</div>
+                    <div class="facility-tag">医療施設</div>
+                    <div class="facility-tag">飲食店</div>
+                    <div class="facility-tag">学校・公共施設</div>
+                    <div class="facility-tag">マンション</div>
+                    <div class="facility-tag">ホテル</div>
+                    <div class="facility-tag">スポーツ施設</div>
+                    <div class="facility-tag">その他</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flow -->
+        <section class="svc-flow">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">FLOW</span>
+                    <h2 class="section-title">施工の流れ</h2>
+                    <p class="section-desc">ご相談から完了まで、丁寧にサポートします</p>
+                </div>
+                <div class="svc-flow__steps reveal">
+                    <div class="flow-step">
+                        <div class="flow-step__num">
+                            <span>STEP</span>
+                            <span>1</span>
+                        </div>
+                        <p class="flow-step__label">ご相談・お問い合わせ</p>
+                        <p class="flow-step__desc">お電話またはメールにてお気軽にご連絡ください</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step__num">
+                            <span>STEP</span>
+                            <span>2</span>
+                        </div>
+                        <p class="flow-step__label">現地調査・ヒアリング</p>
+                        <p class="flow-step__desc">専門スタッフが現地を確認し、詳細な要件を伺います</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step__num">
+                            <span>STEP</span>
+                            <span>3</span>
+                        </div>
+                        <p class="flow-step__label">お見積もり・ご提案</p>
+                        <p class="flow-step__desc">最適なプランと詳細なお見積もりをご提示します</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step__num">
+                            <span>STEP</span>
+                            <span>4</span>
+                        </div>
+                        <p class="flow-step__label">施工</p>
+                        <p class="flow-step__desc">安全・丁寧・迅速に施工を実施します</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step__num">
+                            <span>STEP</span>
+                            <span>5</span>
+                        </div>
+                        <p class="flow-step__label">完了・アフターフォロー</p>
+                        <p class="flow-step__desc">動作確認後、引き渡し。施工後も安心のサポートを提供します</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="contact">
+            <div class="contact__glow"></div>
+            <div class="container">
+                <div class="contact__inner reveal">
+                    <span class="section-label">CONTACT</span>
+                    <h2 class="contact__title">まずは、お気軽にご相談ください。</h2>
+                    <p class="contact__desc">
+                        業務用エアコン設置工事のご質問、お見積もりのご依頼など、<br class="pc-only">
+                        お気軽にお問い合わせください。
+                    </p>
+                    <a href="index.html#contact" class="btn btn--orange btn--lg">お問い合わせはこちら</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__main">
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo">
+                        <svg width="30" height="30" viewBox="0 0 34 34" fill="none">
+                            <circle cx="17" cy="17" r="16" stroke="#E8682A" stroke-width="2"/>
+                            <path d="M8 21 C11 12, 23 12, 26 21" stroke="#E8682A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                            <circle cx="17" cy="10" r="2.5" fill="#E8682A"/>
+                        </svg>
+                        <span class="footer__logo-text">
+                            <span class="footer__logo-name">株式会社あかつき空調</span>
+                        </span>
+                    </a>
+                    <p class="footer__desc">空調設備工事を通じて、<br>多様な施設の快適で安全な空間づくりを<br>長期にわたり支えています。</p>
+                </div>
+
+                <nav class="footer__nav">
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">サービス</h4>
+                        <ul>
+                            <li><a href="service-construction.html">業務用エアコン設置工事</a></li>
+                            <li><a href="service-maintenance.html">冷媒配管工事</a></li>
+                            <li><a href="service-freon.html">フロンガス回収工事</a></li>
+                            <li><a href="index.html#cases">施工事例</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">会社情報</h4>
+                        <ul>
+                            <li><a href="about.html#message">代表挨拶</a></li>
+                            <li><a href="about.html#company">会社概要</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">お問い合わせ</h4>
+                        <ul>
+                            <li><a href="index.html#contact">お見積もり依頼</a></li>
+                            <li><a href="recruit.html">採用情報</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copy">&copy; 株式会社あかつき空調 All Rights Reserved.</p>
+                <ul class="footer__links">
+                    <li><a href="privacy.html">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

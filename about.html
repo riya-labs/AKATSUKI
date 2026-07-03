@@ -1,0 +1,458 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="株式会社あかつき空調の会社情報。代表挨拶・会社概要・沿革をご紹介します。業務用エアコン設置工事・メンテナンスで地域の快適な空間づくりを支えています。">
+    <title>会社概要 | 株式会社あかつき空調</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* サブページ用ヘッダー固定スタイル */
+        .header {
+            background: rgba(12,72,148,.96);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 24px rgba(0,0,0,.25);
+        }
+
+        /* ========== Message (代表挨拶) ========== */
+        .message {
+            padding-top: calc(var(--header) + 80px);
+            padding-bottom: 100px;
+            background: var(--white);
+        }
+        .message__body {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .message__heading {
+            font-family: var(--serif);
+            font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: .05em;
+            line-height: 1.75;
+            margin-bottom: 36px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid var(--bg);
+            position: relative;
+        }
+        .message__heading::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 48px;
+            height: 2px;
+            background: var(--orange);
+        }
+        .message__text {
+            font-size: .95rem;
+            color: var(--text-2);
+            line-height: 2.1;
+            margin-bottom: 24px;
+        }
+        .message__sign {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .message__sign-bar {
+            width: 3px;
+            height: 48px;
+            background: linear-gradient(to bottom, var(--orange), var(--orange-2));
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+        .message__sign-role {
+            font-size: .78rem;
+            color: var(--gray);
+            letter-spacing: .08em;
+            margin-bottom: 6px;
+        }
+        .message__sign-name {
+            font-family: var(--serif);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: .1em;
+        }
+
+        /* ========== Company Info (会社概要) ========== */
+        .company {
+            padding: 100px 0;
+            background: var(--bg);
+        }
+        .company__table-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--r-lg);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: var(--sh-sm);
+        }
+        .company__table {
+            width: 100%;
+            /* separate+spacing:0 にすることで overflow:hidden の角丸クリップが正常動作する */
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .company__table tr:hover { background: rgba(232,244,253,.5); }
+        .company__table th,
+        .company__table td {
+            border-bottom: 1px solid var(--border);
+            transition: background var(--ease);
+        }
+        .company__table tr:last-child th,
+        .company__table tr:last-child td { border-bottom: none; }
+        .company__table th {
+            width: 200px;
+            padding: 24px 32px;
+            text-align: left;
+            font-size: .82rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: .06em;
+            background: rgba(14,85,168,.03);
+            border-right: 1px solid var(--border);
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+        .company__table td {
+            padding: 24px 32px;
+            font-size: .9rem;
+            color: var(--text-2);
+            line-height: 1.85;
+            vertical-align: middle;
+        }
+        .company__table td strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .company__license-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .company__license-list li {
+            padding: 3px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .company__license-list li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--orange);
+            margin-top: 9px;
+            flex-shrink: 0;
+        }
+
+        /* ========== History (沿革) ========== */
+        .history {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        .history__timeline {
+            max-width: 760px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 32px;
+        }
+        .history__timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--orange), var(--navy-2));
+            border-radius: 2px;
+        }
+        .history__item {
+            position: relative;
+            padding: 0 0 40px 36px;
+        }
+        .history__item:last-child { padding-bottom: 0; }
+        .history__item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--orange);
+            border: 2px solid var(--white);
+            box-shadow: 0 0 0 2px var(--orange);
+        }
+        .history__year {
+            font-size: .78rem;
+            font-weight: 700;
+            color: var(--orange);
+            letter-spacing: .1em;
+            margin-bottom: 6px;
+        }
+        .history__event {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: .03em;
+        }
+
+        /* ========== Certification row ========== */
+        .company__cert-row {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .company__cert-logo {
+            width: 70px;
+            height: auto;
+            display: block;
+        }
+
+        /* ========== Responsive ========== */
+        @media (max-width: 768px) {
+            .message {
+                padding-top: calc(var(--header) + 48px);
+                padding-bottom: 72px;
+            }
+            .company,
+            .history { padding: 72px 0; }
+
+            .company__table th {
+                width: 120px;
+                padding: 18px 20px;
+                font-size: .78rem;
+            }
+            .company__table td { padding: 18px 20px; font-size: .87rem; }
+        }
+
+        @media (max-width: 480px) {
+            .company__table th,
+            .company__table td { padding: 14px 16px; }
+            .company__table th { width: 100px; font-size: .75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header__inner container">
+            <a href="index.html" class="header__logo">
+                <span class="logo__icon">
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                        <circle cx="17" cy="17" r="16" stroke="#E8682A" stroke-width="2"/>
+                        <path d="M8 21 C11 12, 23 12, 26 21" stroke="#E8682A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                        <path d="M5 25 C9 14, 25 14, 29 25" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.35"/>
+                        <circle cx="17" cy="10" r="2.5" fill="#E8682A"/>
+                    </svg>
+                </span>
+                <span class="logo__text">
+                    <span class="logo__name">株式会社あかつき空調</span>
+                </span>
+            </a>
+
+            <nav class="header__nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="index.html#services" class="nav__link">事業内容</a></li>
+                    <li><a href="index.html#features" class="nav__link">選ばれる理由</a></li>
+                    <li><a href="index.html#cases" class="nav__link">施工事例</a></li>
+                    <li><a href="about.html" class="nav__link nav__link--active">会社概要</a></li>
+                    <li><a href="index.html#contact" class="nav__link">お問い合わせ</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ========== 代表挨拶 ========== -->
+        <section class="message" id="message">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">MESSAGE</span>
+                    <h2 class="section-title">代表挨拶</h2>
+                </div>
+
+                <div class="message__body reveal">
+                    <h2 class="message__heading">
+                        高い品質と確かな技術で、<br>
+                        お客様の信頼に誠実に応えます
+                    </h2>
+                    <p class="message__text">
+                        当社は、建築物における業務用エアコン設置工事を中心に、高品質な設備工事サービスの提供を目的として設立いたしました。
+                    </p>
+                    <p class="message__text">
+                        長年にわたり培ってきた豊富な実務経験と技術力を活かし、安全を最優先に考えながら、品質の高い施工を提供しております。お客様のご要望に真摯に向き合い、快適で安心できる環境づくりに貢献することを使命として、一つ一つの工事に誠実に取り組んでまいります。
+                    </p>
+                    <p class="message__text">
+                        これからも技術の向上と品質管理の徹底に努め、信頼されるパートナーとして地域社会の発展に貢献してまいります。
+                    </p>
+                    <p class="message__text">
+                        今後とも格別のご支援、ご愛顧を賜りますよう、よろしくお願い申し上げます。
+                    </p>
+                    <div class="message__sign">
+                        <div class="message__sign-bar"></div>
+                        <div>
+                            <p class="message__sign-role">株式会社あかつき空調 代表取締役</p>
+                            <p class="message__sign-name">蝦名 暁</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 会社概要 ========== -->
+        <section class="company" id="company">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">COMPANY</span>
+                    <h2 class="section-title">会社概要</h2>
+                </div>
+
+                <div class="company__table-wrap reveal">
+                    <table class="company__table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">会社名</th>
+                                <td><strong>株式会社あかつき空調</strong></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">代表者</th>
+                                <td>代表取締役 蝦名 暁</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">設立</th>
+                                <td>2025年5月23日</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">所在地</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">事業内容</th>
+                                <td>建設業（空調設備工事業）</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">許認可</th>
+                                <td>
+                                    <ul class="company__license-list">
+                                        <li>建設業許可（管工事業）</li>
+                                        <li>第一種フロン類充填回収業者（東京都・埼玉県）</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">認定</th>
+                                <td>
+                                    <div class="company__cert-row">
+                                        <span>令和8年度 事業継続力強化計画 経済産業大臣認定</span>
+                                        <img src="images/認定ロゴ.png" alt="令和8年度事業継続力強化計画認定（経済産業省）" class="company__cert-logo">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 沿革 ========== -->
+        <section class="history" id="history">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">HISTORY</span>
+                    <h2 class="section-title">沿革</h2>
+                </div>
+
+                <div class="history__timeline reveal">
+                    <div class="history__item">
+                        <p class="history__year">2008年4月</p>
+                        <p class="history__event">個人事業 AKATSUKI空調 設立</p>
+                    </div>
+                    <div class="history__item">
+                        <p class="history__year">2025年5月</p>
+                        <p class="history__event">株式会社あかつき空調 設立</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== Footer ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__main">
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo">
+                        <svg width="30" height="30" viewBox="0 0 34 34" fill="none">
+                            <circle cx="17" cy="17" r="16" stroke="#E8682A" stroke-width="2"/>
+                            <path d="M8 21 C11 12, 23 12, 26 21" stroke="#E8682A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                            <circle cx="17" cy="10" r="2.5" fill="#E8682A"/>
+                        </svg>
+                        <span class="footer__logo-text">
+                            <span class="footer__logo-name">株式会社あかつき空調</span>
+                        </span>
+                    </a>
+                    <p class="footer__desc">空調設備工事を通じて、<br>多様な施設の快適で安全な空間づくりを<br>長期にわたり支えています。</p>
+                </div>
+
+                <nav class="footer__nav">
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">サービス</h4>
+                        <ul>
+                            <li><a href="service-construction.html">業務用エアコン設置工事</a></li>
+                            <li><a href="service-maintenance.html">冷媒配管工事</a></li>
+                            <li><a href="service-freon.html">フロンガス回収工事</a></li>
+                            <li><a href="index.html#cases">施工事例</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">会社情報</h4>
+                        <ul>
+                            <li><a href="about.html#message">代表挨拶</a></li>
+                            <li><a href="about.html#company">会社概要</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">お問い合わせ</h4>
+                        <ul>
+                            <li><a href="index.html#contact">お見積もり依頼</a></li>
+                            <li><a href="recruit.html">採用情報</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copy">&copy; 株式会社あかつき空調 All Rights Reserved.</p>
+                <ul class="footer__links">
+                    <li><a href="privacy.html">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="株式会社あかつき空調のプライバシーポリシーです。個人情報の取り扱いについてご説明します。">
+    <title>プライバシーポリシー | 株式会社あかつき空調</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ヘッダーを常に青背景で固定 */
+        .header {
+            background: rgba(12,72,148,.96);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 24px rgba(0,0,0,.25);
+        }
+
+        .policy-body {
+            padding-top: calc(var(--header) + 72px);
+            padding-bottom: 100px;
+            background: var(--white);
+        }
+        .policy-page-title {
+            font-family: var(--serif);
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: .06em;
+            margin-bottom: 48px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+        .policy-page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 48px;
+            height: 2px;
+            background: var(--orange);
+        }
+        @media (max-width: 768px) {
+            .policy-body {
+                padding-top: calc(var(--header) + 48px);
+                padding-bottom: 72px;
+            }
+        }
+
+        .policy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .policy-intro {
+            font-size: .95rem;
+            color: var(--text-2);
+            line-height: 2;
+            margin-bottom: 52px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .policy-section {
+            margin-bottom: 44px;
+        }
+
+        .policy-section__title {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: .04em;
+            margin-bottom: 16px;
+            padding-left: 16px;
+            border-left: 3px solid var(--orange);
+        }
+
+        .policy-section__text {
+            font-size: .9rem;
+            color: var(--text-2);
+            line-height: 2;
+        }
+
+        .policy-section__list {
+            margin: 12px 0 0 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .policy-section__list li {
+            font-size: .9rem;
+            color: var(--text-2);
+            line-height: 1.8;
+            padding-left: 18px;
+            position: relative;
+        }
+        .policy-section__list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--orange);
+        }
+
+        .policy-contact-box {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 32px 36px;
+            margin-top: 16px;
+        }
+        .policy-contact-box p {
+            font-size: .9rem;
+            color: var(--text-2);
+            line-height: 2;
+        }
+        .policy-contact-box strong {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .policy-date {
+            margin-top: 56px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border);
+            text-align: right;
+            font-size: .82rem;
+            color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .policy-body { padding: 52px 0 72px; }
+            .policy-contact-box { padding: 24px 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header__inner container">
+            <a href="index.html" class="header__logo">
+                <span class="logo__icon">
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                        <circle cx="17" cy="17" r="16" stroke="#E8682A" stroke-width="2"/>
+                        <path d="M8 21 C11 12, 23 12, 26 21" stroke="#E8682A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                        <path d="M5 25 C9 14, 25 14, 29 25" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.35"/>
+                        <circle cx="17" cy="10" r="2.5" fill="#E8682A"/>
+                    </svg>
+                </span>
+                <span class="logo__text">
+                    <span class="logo__name">株式会社あかつき空調</span>
+                </span>
+            </a>
+
+            <nav class="header__nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="index.html#services" class="nav__link">事業内容</a></li>
+                    <li><a href="index.html#features" class="nav__link">選ばれる理由</a></li>
+                    <li><a href="index.html#cases" class="nav__link">施工事例</a></li>
+                    <li><a href="index.html#news" class="nav__link">お知らせ</a></li>
+                    <li><a href="index.html#contact" class="nav__link">お問い合わせ</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Body -->
+        <div class="policy-body">
+            <div class="container">
+                <div class="policy-content">
+                    <h1 class="policy-page-title">プライバシーポリシー</h1>
+
+                    <p class="policy-intro">
+                        株式会社あかつき空調（以下「当社」）は、お客様の個人情報の保護を重要な責務と認識し、
+                        個人情報の保護に関する法律（個人情報保護法）および関連法令を遵守するとともに、
+                        以下の方針に基づき個人情報の適切な取り扱いに努めてまいります。
+                    </p>
+
+                    <div class="policy-section">
+                        <h2 class="policy-section__title">第1条（個人情報の収集）</h2>
+                        <p class="policy-section__text">
+                            当社は、サービスの提供およびお問い合わせへの対応のために、以下の個人情報を収集することがあります。
+                        </p>
+                        <ul class="policy-section__list">
+                            <li>お名前・会社名</li>
+                            <li>メールアドレス</li>
+                            <li>電話番号</li>
+                            <li>お問い合わせ内容</li>
+                            <li>その他、お客様が任意にご提供いただいた情報</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-section">
+                        <h2 class="policy-section__title">第2条（個人情報の利用目的）</h2>
+                        <p class="policy-section__text">
+                            収集した個人情報は、以下の目的のために利用いたします。
+                        </p>
+                        <ul class="policy-section__list">
+                            <li>お問い合わせへの回答・ご連絡</li>
+                            <li>お見積もりおよびサービスのご提案</li>
+                            <li>施工・メンテナンス等の契約履行</li>
+                            <li>サービスに関するご案内・お知らせの送付</li>
+                            <li>当社サービスの改善および品質向上のための分析</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-section">
+                        <h2 class="policy-section__title">第3条（個人情報の第三者提供）</h2>
+                        <p class="policy-section__text">
+                            当社は、以下のいずれかに該当する場合を除き、お客様の個人情報を第三者に提供・開示することはございません。
+                        </p>
+                        <ul class="policy-section__list">
+                            <li>お客様本人の同意がある場合</li>
+                            <li>法令に基づき開示が求められる場合</li>
+                            <li>人の生命・身体・財産の保護のために必要な場合</li>
+                            <li>公衆衛生の向上または児童の健全育成のために必要な場合</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-section">
+                        <h2 class="policy-section__title">第4条（個人情報の管理）</h2>
+                        <p class="policy-section__text">
+                            当社は、収集した個人情報の漏えい・滅失・毀損の防止のために、適切なセキュリティ対策を講じます。
+                            個人情報へのアクセスは必要な担当者に限定し、不正なアクセスや利用が生じないよう適切な管理を行います。
+                            また、個人情報の取り扱いを外部に委託する場合は、委託先に対しても適切な管理を求めます。
+                        </p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h2 class="policy-section__title">第5条（個人情報の開示・訂正・削除）</h2>
+                        <p class="policy-section__text">
+                            お客様は、当社が保有するご自身の個人情報について、開示・訂正・削除・利用停止をご請求いただくことができます。
+                            ご請求の際は、下記お問い合わせ窓口までご連絡ください。本人確認の上、合理的な期間内に対応いたします。
+                        </p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h2 class="policy-section__title">第6条（Cookie等の利用）</h2>
+                        <p class="policy-section__text">
+                            当社ウェブサイトでは、サービス向上のためにCookieを使用することがあります。
+                            Cookieとはウェブサイトがお客様のブラウザに送信する小さなデータファイルです。
+                            お客様はブラウザの設定によりCookieの受け取りを拒否することができますが、
+                            一部のサービスが正常に動作しない場合があります。
+                        </p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h2 class="policy-section__title">第7条（プライバシーポリシーの変更）</h2>
+                        <p class="policy-section__text">
+                            当社は、法令の変更やサービス内容の変更に伴い、本プライバシーポリシーを変更することがあります。
+                            変更後のプライバシーポリシーは、当ウェブサイトに掲載した時点より効力を生じるものとします。
+                        </p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h2 class="policy-section__title">第8条（お問い合わせ窓口）</h2>
+                        <p class="policy-section__text">
+                            個人情報の取り扱いに関するご質問・ご相談は、下記窓口までお問い合わせください。
+                        </p>
+                        <div class="policy-contact-box">
+                            <p>
+                                <strong>株式会社あかつき空調</strong><br>
+                                個人情報取り扱い担当窓口<br><br>
+                                メール：<a href="mailto:akatsuki.21air@gmail.com" style="color: var(--navy-2);">akatsuki.21air@gmail.com</a><br>
+                                お問い合わせ内容を確認のうえ、順次対応いたします。
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="policy-date">制定日：2026年6月23日</p>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__main">
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo">
+                        <svg width="30" height="30" viewBox="0 0 34 34" fill="none">
+                            <circle cx="17" cy="17" r="16" stroke="#E8682A" stroke-width="2"/>
+                            <path d="M8 21 C11 12, 23 12, 26 21" stroke="#E8682A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                            <circle cx="17" cy="10" r="2.5" fill="#E8682A"/>
+                        </svg>
+                        <span class="footer__logo-text">
+                            <span class="footer__logo-name">株式会社あかつき空調</span>
+                        </span>
+                    </a>
+                    <p class="footer__desc">空調設備工事を通じて、<br>多様な施設の快適で安全な空間づくりを<br>長期にわたり支えています。</p>
+                </div>
+
+                <nav class="footer__nav">
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">サービス</h4>
+                        <ul>
+                            <li><a href="service-construction.html">業務用エアコン設置工事</a></li>
+                            <li><a href="service-maintenance.html">冷媒配管工事</a></li>
+                            <li><a href="service-freon.html">フロンガス回収工事</a></li>
+                            <li><a href="index.html#cases">施工事例</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">会社情報</h4>
+                        <ul>
+                            <li><a href="about.html#message">代表挨拶</a></li>
+                            <li><a href="about.html#company">会社概要</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">お問い合わせ</h4>
+                        <ul>
+                            <li><a href="index.html#contact">お見積もり依頼</a></li>
+                            <li><a href="recruit.html">採用情報</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copy">&copy; 株式会社あかつき空調 All Rights Reserved.</p>
+                <ul class="footer__links">
+                    <li><a href="privacy.html">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
