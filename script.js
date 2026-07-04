@@ -171,3 +171,84 @@
     window.addEventListener('scroll', update, { passive: true });
     update();
 })();
+
+
+/* ----- Contact form: Web3Forms submission -----
+   ※ access_key はテスト用キーです。本番公開前に Web3Forms (https://web3forms.com/) で
+   取得した本番用のアクセスキーに差し替えてください。 */
+(function () {
+    const form = document.querySelector('.contact__form');
+    if (!form) return;
+
+    const WEB3FORMS_ACCESS_KEY = 'c208967a-bb1e-4cf8-8251-33d27238f0d2'; // TODO: 本番用キーに差し替え
+
+    const nameInput    = form.querySelector('#cf-name');
+    const emailInput   = form.querySelector('#cf-email');
+    const typeSelect   = form.querySelector('#cf-type');
+    const messageInput = form.querySelector('#cf-message');
+    const submitBtn    = form.querySelector('.contact__form-submit .btn');
+    const submitBtnDefaultText = submitBtn ? submitBtn.textContent : '';
+
+    function validate() {
+        if (!nameInput.value.trim()) {
+            return { field: nameInput, message: 'お名前を入力してください。' };
+        }
+        if (!emailInput.value.trim()) {
+            return { field: emailInput, message: 'メールアドレスを入力してください。' };
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
+            return { field: emailInput, message: 'メールアドレスの形式が正しくありません。' };
+        }
+        if (!typeSelect.value) {
+            return { field: typeSelect, message: 'お問い合わせ種別を選択してください。' };
+        }
+        if (!messageInput.value.trim()) {
+            return { field: messageInput, message: 'お問い合わせ内容を入力してください。' };
+        }
+        return null;
+    }
+
+    function setSubmitting(isSubmitting) {
+        if (!submitBtn) return;
+        submitBtn.disabled = isSubmitting;
+        submitBtn.textContent = isSubmitting ? '送信中...' : submitBtnDefaultText;
+    }
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const error = validate();
+        if (error) {
+            alert(error.message);
+            error.field.focus();
+            return;
+        }
+
+        setSubmitting(true);
+
+        const formData = new FormData(form);
+        formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+        formData.append('subject', '【株式会社あかつき空調】お問い合わせフォームより');
+        formData.append('from_name', '株式会社あかつき空調 コーポレートサイト');
+
+        try {
+            const res = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { Accept: 'application/json' },
+                body: formData
+            });
+            const result = await res.json();
+
+            if (result.success) {
+                alert('お問い合わせありがとうございました。');
+                form.reset();
+            } else {
+                alert('送信に失敗しました。時間をおいて再度お試しください。');
+            }
+        } catch (err) {
+            alert('送信中にエラーが発生しました。通信環境をご確認のうえ、再度お試しください。');
+        } finally {
+            setSubmitting(false);
+        }
+    });
+})();
