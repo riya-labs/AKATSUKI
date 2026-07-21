@@ -35,13 +35,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* サブページ用ヘッダー固定スタイル */
-        .header {
-            background: rgba(35,78,112,.96);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 24px rgba(0,0,0,.25);
-        }
-
         /* ========== Message (代表挨拶) ========== */
         .message {
             padding-top: calc(var(--header) + 80px);
@@ -274,16 +267,11 @@
 <body>
 
     <!-- Header -->
-    <header class="header" id="header">
+    <header class="header header--light" id="header">
         <div class="header__inner container">
             <a href="index.html" class="header__logo">
                 <span class="logo__icon">
-                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-                        <circle cx="17" cy="17" r="16" stroke="#7FB8D6" stroke-width="2"/>
-                        <path d="M8 21 C11 12, 23 12, 26 21" stroke="#7FB8D6" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-                        <path d="M5 25 C9 14, 25 14, 29 25" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.35"/>
-                        <circle cx="17" cy="10" r="2.5" fill="#7FB8D6"/>
-                    </svg>
+                    <img src="images/会社ロゴ.png" alt="株式会社あかつき空調" width="34" height="34" class="brand-mark">
                 </span>
                 <span class="logo__text">
                     <span class="logo__name">株式会社あかつき空調</span>
@@ -431,11 +419,7 @@
             <div class="footer__main">
                 <div class="footer__brand">
                     <a href="index.html" class="footer__logo">
-                        <svg width="30" height="30" viewBox="0 0 34 34" fill="none">
-                            <circle cx="17" cy="17" r="16" stroke="#7FB8D6" stroke-width="2"/>
-                            <path d="M8 21 C11 12, 23 12, 26 21" stroke="#7FB8D6" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-                            <circle cx="17" cy="10" r="2.5" fill="#7FB8D6"/>
-                        </svg>
+                        <img src="images/会社ロゴ.png" alt="株式会社あかつき空調" width="30" height="30" class="brand-mark">
                         <span class="footer__logo-text">
                             <span class="footer__logo-name">株式会社あかつき空調</span>
                         </span>

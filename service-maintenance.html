@@ -35,12 +35,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        .header {
-            background: rgba(35,78,112,.96);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 24px rgba(0,0,0,.25);
-        }
-
         /* ========== Overview ========== */
         .svc-overview {
             padding-top: calc(var(--header) + 72px);
@@ -181,21 +175,11 @@
         /* ========== Benefits ========== */
         .svc-benefits {
             padding: 128px 0;
-            background: var(--navy);
+            background: var(--bg);
             position: relative;
             overflow: hidden;
         }
-        .svc-benefits::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(127,184,214,.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(127,184,214,.05) 1px, transparent 1px);
-            background-size: 56px 56px;
-        }
         .svc-benefits .container { position: relative; z-index: 1; }
-        .svc-benefits .section-title--light { color: var(--white); }
         .svc-benefits__grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -204,22 +188,24 @@
             margin: 0 auto;
         }
         .benefit-item {
-            background: rgba(255,255,255,.06);
-            border: 1px solid rgba(127,184,214,.18);
+            background: var(--white);
+            border: 1px solid var(--border);
             border-radius: var(--r-lg);
             padding: 36px 28px;
             text-align: center;
-            transition: background var(--ease), border-color var(--ease);
+            box-shadow: var(--sh-sm);
+            transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
         }
         .benefit-item:hover {
-            background: rgba(255,255,255,.1);
+            transform: translateY(-4px);
+            box-shadow: var(--sh-md);
             border-color: rgba(127,184,214,.4);
         }
         .benefit-item__num {
             font-family: var(--serif);
             font-size: 2.4rem;
             font-weight: 700;
-            color: var(--accent);
+            color: var(--navy-3);
             line-height: 1;
             margin-bottom: 4px;
         }
@@ -227,13 +213,13 @@
             font-family: var(--serif);
             font-size: 1rem;
             font-weight: 700;
-            color: var(--white);
+            color: var(--navy);
             margin-bottom: 14px;
             letter-spacing: .04em;
         }
         .benefit-item__text {
             font-size: .84rem;
-            color: rgba(255,255,255,.6);
+            color: var(--text-2);
             line-height: 1.85;
         }
 
@@ -261,16 +247,11 @@
 <body>
 
     <!-- Header -->
-    <header class="header" id="header">
+    <header class="header header--light" id="header">
         <div class="header__inner container">
             <a href="index.html" class="header__logo">
                 <span class="logo__icon">
-                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-                        <circle cx="17" cy="17" r="16" stroke="#7FB8D6" stroke-width="2"/>
-                        <path d="M8 21 C11 12, 23 12, 26 21" stroke="#7FB8D6" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-                        <path d="M5 25 C9 14, 25 14, 29 25" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.35"/>
-                        <circle cx="17" cy="10" r="2.5" fill="#7FB8D6"/>
-                    </svg>
+                    <img src="images/会社ロゴ.png" alt="株式会社あかつき空調" width="34" height="34" class="brand-mark">
                 </span>
                 <span class="logo__text">
                     <span class="logo__name">株式会社あかつき空調</span>
@@ -391,8 +372,8 @@
         <section class="svc-benefits">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-label section-label--light">POINT</span>
-                    <h2 class="section-title section-title--light">あかつき空調の冷媒配管施工の強み</h2>
+                    <span class="section-label">POINT</span>
+                    <h2 class="section-title">あかつき空調の冷媒配管施工の強み</h2>
                 </div>
                 <div class="svc-benefits__grid reveal">
                     <div class="benefit-item">
@@ -438,11 +419,7 @@
             <div class="footer__main">
                 <div class="footer__brand">
                     <a href="index.html" class="footer__logo">
-                        <svg width="30" height="30" viewBox="0 0 34 34" fill="none">
-                            <circle cx="17" cy="17" r="16" stroke="#7FB8D6" stroke-width="2"/>
-                            <path d="M8 21 C11 12, 23 12, 26 21" stroke="#7FB8D6" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-                            <circle cx="17" cy="10" r="2.5" fill="#7FB8D6"/>
-                        </svg>
+                        <img src="images/会社ロゴ.png" alt="株式会社あかつき空調" width="30" height="30" class="brand-mark">
                         <span class="footer__logo-text">
                             <span class="footer__logo-name">株式会社あかつき空調</span>
                         </span>
