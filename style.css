@@ -190,32 +190,15 @@ button { font-family: inherit; }
     inset: 0 0 auto 0;
     height: var(--header);
     z-index: 200;
-    transition: background var(--ease), box-shadow var(--ease);
-}
-.header.scrolled {
     background: rgba(255,255,255,.96);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(35,78,112,.10);
+    transition: background var(--ease), box-shadow var(--ease);
 }
 .header.scrolled.scrolling {
     background: rgba(255,255,255,.75);
     box-shadow: none;
 }
-.header.scrolled .nav__link { color: var(--text-2); }
-.header.scrolled .nav__link:hover { color: var(--navy); background: rgba(127,184,214,.14); }
-.header.scrolled .nav__link--active { color: var(--navy); background: transparent; }
-.header.scrolled .hamburger span { background: var(--navy); }
-
-/* Always-light header (sub-pages without a hero photo) */
-.header--light {
-    background: rgba(255,255,255,.96);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(35,78,112,.10);
-}
-.header--light .nav__link { color: var(--text-2); }
-.header--light .nav__link:hover { color: var(--navy); background: rgba(127,184,214,.14); }
-.header--light .nav__link--active { color: var(--navy); background: transparent; }
-.header--light .hamburger span { background: var(--navy); }
 
 .header__inner {
     display: flex;
@@ -230,10 +213,6 @@ button { font-family: inherit; }
     align-items: center;
     gap: 10px;
     flex-shrink: 0;
-    background: var(--white);
-    padding: 6px 16px 6px 10px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(16,32,48,.16);
 }
 .brand-mark {
     display: block;
@@ -263,18 +242,17 @@ button { font-family: inherit; }
     display: block;
     padding: 8px 13px;
     font-size: .85rem;
-    color: rgba(255,255,255,.82);
+    color: var(--text-2);
     font-weight: 400;
     border-radius: var(--r);
     letter-spacing: .03em;
     transition: color var(--ease), background var(--ease);
 }
-.nav__link:hover,
-.nav__link--active {
-    color: var(--white);
-    background: rgba(255,255,255,.08);
+.nav__link:hover {
+    color: var(--navy);
+    background: rgba(127,184,214,.14);
 }
-.nav__link--active { color: var(--accent); background: transparent; }
+.nav__link--active { color: var(--navy); background: transparent; }
 
 /* Hamburger */
 .hamburger {
@@ -293,7 +271,7 @@ button { font-family: inherit; }
 .hamburger span {
     display: block;
     height: 2px;
-    background: var(--white);
+    background: var(--navy);
     border-radius: 2px;
     transition: transform .3s ease, opacity .3s ease;
     transform-origin: center;
@@ -355,9 +333,9 @@ button { font-family: inherit; }
 
 .hero__badge {
     display: inline-block;
-    background: rgba(194,85,28,.14);
-    border: 1px solid rgba(194,85,28,.45);
-    color: var(--orange-2);
+    background: rgba(255,255,255,.92);
+    border: 1px solid rgba(255,255,255,.5);
+    color: var(--navy);
     padding: 5px 18px;
     border-radius: 100px;
     font-size: .75rem;
@@ -376,7 +354,8 @@ button { font-family: inherit; }
     letter-spacing: .04em;
 }
 .hero__title--accent {
-    color: var(--orange-2);
+    color: var(--navy);
+    text-shadow: 0 0 16px rgba(255,255,255,.6), 0 0 4px rgba(255,255,255,.4);
     position: relative;
     display: inline-block;
 }
@@ -387,9 +366,9 @@ button { font-family: inherit; }
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--orange-2);
+    background: var(--navy);
     border-radius: 2px;
-    opacity: .7;
+    opacity: .85;
 }
 
 .hero__desc {
