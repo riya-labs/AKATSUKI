@@ -36,7 +36,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         .header {
-            background: rgba(12,72,148,.96);
+            background: rgba(35,78,112,.96);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 24px rgba(0,0,0,.25);
         }
@@ -44,7 +44,7 @@
         /* ========== Overview ========== */
         .svc-overview {
             padding-top: calc(var(--header) + 72px);
-            padding-bottom: 100px;
+            padding-bottom: 120px;
             background: var(--white);
         }
         .svc-overview__page-title {
@@ -110,7 +110,7 @@
 
         /* ========== Items ========== */
         .svc-items {
-            padding: 100px 0;
+            padding: 128px 0;
             background: var(--bg);
         }
         .svc-items__grid {
@@ -135,7 +135,7 @@
         .svc-item-card__icon {
             width: 56px;
             height: 56px;
-            background: rgba(232,104,42,.08);
+            background: rgba(127,184,214,.10);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -158,7 +158,7 @@
 
         /* ========== Facilities ========== */
         .svc-facilities {
-            padding: 100px 0;
+            padding: 128px 0;
             background: var(--white);
         }
         .svc-facilities__grid {
@@ -188,7 +188,7 @@
 
         /* ========== Flow ========== */
         .svc-flow {
-            padding: 100px 0;
+            padding: 128px 0;
             background: var(--bg);
         }
         .svc-flow__steps {
@@ -206,7 +206,7 @@
             left: calc(10% + 18px);
             right: calc(10% + 18px);
             height: 2px;
-            background: linear-gradient(to right, var(--orange), var(--navy-2));
+            background: linear-gradient(to right, var(--accent), var(--navy-2));
         }
         .flow-step {
             display: flex;
@@ -232,13 +232,13 @@
             transition: border-color var(--ease), box-shadow var(--ease);
         }
         .flow-step:hover .flow-step__num {
-            border-color: var(--orange);
-            box-shadow: 0 0 0 4px rgba(232,104,42,.12);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(127,184,214,.15);
         }
         .flow-step__num span:first-child {
             font-size: .6rem;
             font-weight: 700;
-            color: var(--orange);
+            color: var(--gray);
             letter-spacing: .1em;
         }
         .flow-step__num span:last-child {
@@ -300,10 +300,10 @@
             <a href="index.html" class="header__logo">
                 <span class="logo__icon">
                     <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-                        <circle cx="17" cy="17" r="16" stroke="#E8682A" stroke-width="2"/>
-                        <path d="M8 21 C11 12, 23 12, 26 21" stroke="#E8682A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                        <circle cx="17" cy="17" r="16" stroke="#7FB8D6" stroke-width="2"/>
+                        <path d="M8 21 C11 12, 23 12, 26 21" stroke="#7FB8D6" stroke-width="2.2" fill="none" stroke-linecap="round"/>
                         <path d="M5 25 C9 14, 25 14, 29 25" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.35"/>
-                        <circle cx="17" cy="10" r="2.5" fill="#E8682A"/>
+                        <circle cx="17" cy="10" r="2.5" fill="#7FB8D6"/>
                     </svg>
                 </span>
                 <span class="logo__text">
@@ -367,11 +367,11 @@
                     <div class="svc-item-card reveal">
                         <div class="svc-item-card__icon">
                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <rect x="2" y="7" width="24" height="10" rx="3" stroke="#E8682A" stroke-width="1.8"/>
-                                <line x1="8" y1="17" x2="8" y2="22" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
-                                <line x1="14" y1="17" x2="14" y2="22" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
-                                <line x1="20" y1="17" x2="20" y2="22" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
-                                <line x1="4" y1="22" x2="24" y2="22" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
+                                <rect x="2" y="7" width="24" height="10" rx="3" stroke="#234E70" stroke-width="1.8"/>
+                                <line x1="8" y1="17" x2="8" y2="22" stroke="#234E70" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="14" y1="17" x2="14" y2="22" stroke="#234E70" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="20" y1="17" x2="20" y2="22" stroke="#234E70" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="4" y1="22" x2="24" y2="22" stroke="#234E70" stroke-width="1.8" stroke-linecap="round"/>
                             </svg>
                         </div>
                         <h3 class="svc-item-card__title">業務用エアコン設置・更新</h3>
@@ -380,12 +380,12 @@
                     <div class="svc-item-card reveal">
                         <div class="svc-item-card__icon">
                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <circle cx="14" cy="14" r="10" stroke="#E8682A" stroke-width="1.8"/>
-                                <circle cx="14" cy="14" r="4" stroke="#E8682A" stroke-width="1.8"/>
-                                <line x1="14" y1="4" x2="14" y2="10" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
-                                <line x1="14" y1="18" x2="14" y2="24" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
-                                <line x1="4" y1="14" x2="10" y2="14" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
-                                <line x1="18" y1="14" x2="24" y2="14" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
+                                <circle cx="14" cy="14" r="10" stroke="#234E70" stroke-width="1.8"/>
+                                <circle cx="14" cy="14" r="4" stroke="#234E70" stroke-width="1.8"/>
+                                <line x1="14" y1="4" x2="14" y2="10" stroke="#234E70" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="14" y1="18" x2="14" y2="24" stroke="#234E70" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="4" y1="14" x2="10" y2="14" stroke="#234E70" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="18" y1="14" x2="24" y2="14" stroke="#234E70" stroke-width="1.8" stroke-linecap="round"/>
                             </svg>
                         </div>
                         <h3 class="svc-item-card__title">マルチエアコンシステム</h3>
@@ -394,7 +394,7 @@
                     <div class="svc-item-card reveal">
                         <div class="svc-item-card__icon">
                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <path d="M14 3 L17 10 L24 10 L18.5 14.5 L20.5 21.5 L14 17.5 L7.5 21.5 L9.5 14.5 L4 10 L11 10 Z" stroke="#E8682A" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+                                <path d="M14 3 L17 10 L24 10 L18.5 14.5 L20.5 21.5 L14 17.5 L7.5 21.5 L9.5 14.5 L4 10 L11 10 Z" stroke="#234E70" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <h3 class="svc-item-card__title">省エネ設備への切り替え</h3>
@@ -491,7 +491,7 @@
                         業務用エアコン設置工事のご質問、お見積もりのご依頼など、<br class="pc-only">
                         お気軽にお問い合わせください。
                     </p>
-                    <a href="index.html#contact" class="btn btn--orange btn--lg">お問い合わせはこちら</a>
+                    <a href="index.html#contact" class="btn btn--primary btn--lg">お問い合わせはこちら</a>
                 </div>
             </div>
         </section>
@@ -505,9 +505,9 @@
                 <div class="footer__brand">
                     <a href="index.html" class="footer__logo">
                         <svg width="30" height="30" viewBox="0 0 34 34" fill="none">
-                            <circle cx="17" cy="17" r="16" stroke="#E8682A" stroke-width="2"/>
-                            <path d="M8 21 C11 12, 23 12, 26 21" stroke="#E8682A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-                            <circle cx="17" cy="10" r="2.5" fill="#E8682A"/>
+                            <circle cx="17" cy="17" r="16" stroke="#7FB8D6" stroke-width="2"/>
+                            <path d="M8 21 C11 12, 23 12, 26 21" stroke="#7FB8D6" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                            <circle cx="17" cy="10" r="2.5" fill="#7FB8D6"/>
                         </svg>
                         <span class="footer__logo-text">
                             <span class="footer__logo-name">株式会社あかつき空調</span>

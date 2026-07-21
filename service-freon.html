@@ -36,7 +36,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         .header {
-            background: rgba(12,72,148,.96);
+            background: rgba(35,78,112,.96);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 24px rgba(0,0,0,.25);
         }
@@ -44,7 +44,7 @@
         /* ========== Overview ========== */
         .svc-overview {
             padding-top: calc(var(--header) + 72px);
-            padding-bottom: 100px;
+            padding-bottom: 120px;
             background: var(--white);
         }
         .svc-overview__page-title {
@@ -115,12 +115,12 @@
             gap: 10px;
             margin-top: 28px;
             padding: 12px 20px;
-            background: rgba(14,85,168,.06);
+            background: rgba(35,78,112,.05);
             border: 1px solid var(--border);
             border-radius: var(--r);
         }
         .svc-license__icon {
-            color: var(--orange);
+            color: var(--navy);
             flex-shrink: 0;
         }
         .svc-license__text {
@@ -132,7 +132,7 @@
 
         /* ========== Menu ========== */
         .svc-menu {
-            padding: 100px 0;
+            padding: 128px 0;
             background: var(--bg);
         }
         .svc-menu__grid {
@@ -157,7 +157,7 @@
         .svc-menu-card__icon {
             width: 56px;
             height: 56px;
-            background: rgba(232,104,42,.08);
+            background: rgba(127,184,214,.10);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -202,7 +202,7 @@
 
         /* ========== Benefits ========== */
         .svc-benefits {
-            padding: 100px 0;
+            padding: 128px 0;
             background: var(--navy);
             position: relative;
             overflow: hidden;
@@ -212,8 +212,8 @@
             position: absolute;
             inset: 0;
             background-image:
-                linear-gradient(rgba(100,190,255,.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(100,190,255,.06) 1px, transparent 1px);
+                linear-gradient(rgba(127,184,214,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(127,184,214,.05) 1px, transparent 1px);
             background-size: 56px 56px;
         }
         .svc-benefits .container { position: relative; z-index: 1; }
@@ -226,7 +226,7 @@
         }
         .benefit-item {
             background: rgba(255,255,255,.06);
-            border: 1px solid rgba(100,190,255,.18);
+            border: 1px solid rgba(127,184,214,.18);
             border-radius: var(--r-lg);
             padding: 36px 28px;
             text-align: center;
@@ -234,13 +234,13 @@
         }
         .benefit-item:hover {
             background: rgba(255,255,255,.1);
-            border-color: rgba(100,190,255,.4);
+            border-color: rgba(127,184,214,.4);
         }
         .benefit-item__num {
             font-family: var(--serif);
             font-size: 2.4rem;
             font-weight: 700;
-            color: var(--orange);
+            color: var(--accent);
             line-height: 1;
             margin-bottom: 4px;
         }
@@ -287,10 +287,10 @@
             <a href="index.html" class="header__logo">
                 <span class="logo__icon">
                     <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-                        <circle cx="17" cy="17" r="16" stroke="#E8682A" stroke-width="2"/>
-                        <path d="M8 21 C11 12, 23 12, 26 21" stroke="#E8682A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                        <circle cx="17" cy="17" r="16" stroke="#7FB8D6" stroke-width="2"/>
+                        <path d="M8 21 C11 12, 23 12, 26 21" stroke="#7FB8D6" stroke-width="2.2" fill="none" stroke-linecap="round"/>
                         <path d="M5 25 C9 14, 25 14, 29 25" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.35"/>
-                        <circle cx="17" cy="10" r="2.5" fill="#E8682A"/>
+                        <circle cx="17" cy="10" r="2.5" fill="#7FB8D6"/>
                     </svg>
                 </span>
                 <span class="logo__text">
@@ -338,7 +338,7 @@
                         </p>
                         <div class="svc-license">
                             <svg class="svc-license__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M10 2 L12.5 7.5 L18.5 7.5 L13.5 11 L15.5 17 L10 13.5 L4.5 17 L6.5 11 L1.5 7.5 L7.5 7.5 Z" stroke="#E8682A" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+                                <path d="M10 2 L12.5 7.5 L18.5 7.5 L13.5 11 L15.5 17 L10 13.5 L4.5 17 L6.5 11 L1.5 7.5 L7.5 7.5 Z" stroke="#234E70" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
                             </svg>
                             <p class="svc-license__text">第一種フロン類充填回収業者<br>（東京都・埼玉県 登録）</p>
                         </div>
@@ -360,10 +360,10 @@
                     <div class="svc-menu-card reveal">
                         <div class="svc-menu-card__icon">
                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <rect x="5" y="10" width="18" height="13" rx="2" stroke="#E8682A" stroke-width="1.8"/>
-                                <path d="M10 10 L10 7 Q10 5 14 5 Q18 5 18 7 L18 10" stroke="#E8682A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-                                <line x1="14" y1="14" x2="14" y2="19" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
-                                <line x1="11" y1="16.5" x2="17" y2="16.5" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round"/>
+                                <rect x="5" y="10" width="18" height="13" rx="2" stroke="#234E70" stroke-width="1.8"/>
+                                <path d="M10 10 L10 7 Q10 5 14 5 Q18 5 18 7 L18 10" stroke="#234E70" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                                <line x1="14" y1="14" x2="14" y2="19" stroke="#234E70" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="11" y1="16.5" x2="17" y2="16.5" stroke="#234E70" stroke-width="1.8" stroke-linecap="round"/>
                             </svg>
                         </div>
                         <h3 class="svc-menu-card__title">修理時の冷媒回収</h3>
@@ -378,12 +378,12 @@
                     <div class="svc-menu-card reveal">
                         <div class="svc-menu-card__icon">
                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <path d="M8 22 L4 22 L4 8 L8 8" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M20 22 L24 22 L24 8 L20 8" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                                <rect x="8" y="6" width="12" height="16" rx="2" stroke="#E8682A" stroke-width="1.8"/>
-                                <line x1="11" y1="12" x2="17" y2="12" stroke="#E8682A" stroke-width="1.4" stroke-linecap="round"/>
-                                <line x1="11" y1="15" x2="17" y2="15" stroke="#E8682A" stroke-width="1.4" stroke-linecap="round"/>
-                                <line x1="11" y1="18" x2="15" y2="18" stroke="#E8682A" stroke-width="1.4" stroke-linecap="round"/>
+                                <path d="M8 22 L4 22 L4 8 L8 8" stroke="#234E70" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M20 22 L24 22 L24 8 L20 8" stroke="#234E70" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="8" y="6" width="12" height="16" rx="2" stroke="#234E70" stroke-width="1.8"/>
+                                <line x1="11" y1="12" x2="17" y2="12" stroke="#234E70" stroke-width="1.4" stroke-linecap="round"/>
+                                <line x1="11" y1="15" x2="17" y2="15" stroke="#234E70" stroke-width="1.4" stroke-linecap="round"/>
+                                <line x1="11" y1="18" x2="15" y2="18" stroke="#234E70" stroke-width="1.4" stroke-linecap="round"/>
                             </svg>
                         </div>
                         <h3 class="svc-menu-card__title">廃棄時の冷媒回収</h3>
@@ -398,9 +398,9 @@
                     <div class="svc-menu-card reveal">
                         <div class="svc-menu-card__icon">
                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <path d="M14 4 C8 4 4 8.5 4 14 C4 19.5 8 24 14 24 C20 24 24 19.5 24 14" stroke="#E8682A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-                                <path d="M19 4 L24 4 L24 9" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M10 14 L13 17 L20 10" stroke="#E8682A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 4 C8 4 4 8.5 4 14 C4 19.5 8 24 14 24 C20 24 24 19.5 24 14" stroke="#234E70" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                                <path d="M19 4 L24 4 L24 9" stroke="#234E70" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 14 L13 17 L20 10" stroke="#234E70" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <h3 class="svc-menu-card__title">法令対応・書類サポート</h3>
@@ -454,7 +454,7 @@
                         フロンガス回収・処理のご質問、お見積もりのご依頼など、<br class="pc-only">
                         お気軽にお問い合わせください。
                     </p>
-                    <a href="index.html#contact" class="btn btn--orange btn--lg">お問い合わせはこちら</a>
+                    <a href="index.html#contact" class="btn btn--primary btn--lg">お問い合わせはこちら</a>
                 </div>
             </div>
         </section>
@@ -468,9 +468,9 @@
                 <div class="footer__brand">
                     <a href="index.html" class="footer__logo">
                         <svg width="30" height="30" viewBox="0 0 34 34" fill="none">
-                            <circle cx="17" cy="17" r="16" stroke="#E8682A" stroke-width="2"/>
-                            <path d="M8 21 C11 12, 23 12, 26 21" stroke="#E8682A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-                            <circle cx="17" cy="10" r="2.5" fill="#E8682A"/>
+                            <circle cx="17" cy="17" r="16" stroke="#7FB8D6" stroke-width="2"/>
+                            <path d="M8 21 C11 12, 23 12, 26 21" stroke="#7FB8D6" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                            <circle cx="17" cy="10" r="2.5" fill="#7FB8D6"/>
                         </svg>
                         <span class="footer__logo-text">
                             <span class="footer__logo-name">株式会社あかつき空調</span>
