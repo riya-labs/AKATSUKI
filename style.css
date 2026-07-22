@@ -1274,11 +1274,17 @@ a.news-item__title:hover { color: var(--navy-2); }
     /* Contact */
     .contact__form-row { grid-template-columns: 1fr; gap: 0; }
 
-    /* Footer: brand stays left-aligned as before; only the nav columns are centered */
+    /* Footer: brand stays left-aligned as before; nav columns sit side by side, centered as a group */
     .footer__main   { flex-direction: column; gap: 28px; }
     .footer__brand  { flex: 0 0 auto; width: 100%; }
-    .footer__col    { align-self: center; text-align: center; }
-    .footer__col-title::before { display: none; }
+    .footer__nav    { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; width: 100%; }
+    .footer__col    { text-align: center; }
+    .footer__col-title::before {
+        position: static;
+        left: auto; top: auto;
+        transform: none;
+        margin-right: 6px;
+    }
     .footer__bottom { flex-direction: column; gap: 14px; text-align: center; }
 }
 
