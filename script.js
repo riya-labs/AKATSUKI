@@ -32,6 +32,7 @@
     btn.addEventListener('click', () => {
         const open = btn.classList.toggle('open');
         nav.classList.toggle('open', open);
+        document.body.classList.toggle('nav-open', open);
         btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
     });
 
@@ -40,6 +41,7 @@
         link.addEventListener('click', () => {
             btn.classList.remove('open');
             nav.classList.remove('open');
+            document.body.classList.remove('nav-open');
             btn.setAttribute('aria-label', 'メニューを開く');
         });
     });
@@ -49,6 +51,7 @@
         if (!btn.contains(e.target) && !nav.contains(e.target)) {
             btn.classList.remove('open');
             nav.classList.remove('open');
+            document.body.classList.remove('nav-open');
         }
     });
 })();
