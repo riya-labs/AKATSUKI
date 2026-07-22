@@ -816,8 +816,8 @@ button { font-family: inherit; }
     letter-spacing: .08em;
     padding: 3px 12px;
     border-radius: 100px;
-    background: rgba(127,184,214,.18);
-    color: var(--navy);
+    background: var(--orange);
+    color: var(--white);
     white-space: nowrap;
 }
 .news-item__cat--work {
@@ -827,7 +827,7 @@ button { font-family: inherit; }
 
 .news-item__title {
     font-size: .9rem;
-    color: var(--text);
+    color: var(--navy);
     line-height: 1.6;
     transition: color var(--ease);
 }
@@ -970,12 +970,14 @@ a.news-item__title:hover { color: var(--navy-2); }
 
 .footer__main {
     display: flex;
-    gap: 60px;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 48px;
     padding-bottom: 26px;
     border-bottom: 1px solid rgba(255,255,255,.07);
 }
 
-.footer__brand { flex: 0 0 280px; }
+.footer__brand { flex: 0 0 300px; }
 
 .footer__logo {
     display: flex;
@@ -1010,12 +1012,10 @@ a.news-item__title:hover { color: var(--navy-2); }
 
 
 .footer__nav {
-    display: flex;
-    gap: 52px;
-    flex: 1;
-    justify-content: flex-end;
-    align-items: flex-start;
+    display: contents;
 }
+
+.footer__col { flex: 0 0 auto; min-width: 150px; }
 
 .footer__col-title {
     position: relative;
@@ -1072,9 +1072,8 @@ a.news-item__title:hover { color: var(--navy-2); }
 @media (max-width: 1024px) {
     .stats__grid    { grid-template-columns: repeat(2, 1fr); }
 
-    .footer__main { flex-wrap: wrap; gap: 40px; }
+    .footer__main { flex-wrap: wrap; justify-content: flex-start; gap: 40px; }
     .footer__brand { flex: 0 0 100%; }
-    .footer__nav { justify-content: flex-start; }
 }
 
 /* タブレット：施工事例を2列に */
@@ -1103,7 +1102,8 @@ a.news-item__title:hover { color: var(--navy-2); }
     .header__nav {
         position: fixed;
         top: var(--header);
-        left: 0; right: 0; bottom: 0;
+        left: 0; right: 0;
+        height: calc(100vh - var(--header));
         z-index: 300;
         display: flex;
         align-items: center;
@@ -1214,7 +1214,7 @@ a.news-item__title:hover { color: var(--navy-2); }
     .contact__form-row { grid-template-columns: 1fr; gap: 0; }
 
     /* Footer */
-    .footer__nav    { flex-wrap: wrap; gap: 28px; }
+    .footer__main   { gap: 28px; }
     .footer__bottom { flex-direction: column; gap: 14px; text-align: center; }
 }
 
