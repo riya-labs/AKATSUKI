@@ -185,12 +185,24 @@
 
     const WEB3FORMS_ACCESS_KEY = 'c208967a-bb1e-4cf8-8251-33d27238f0d2'; // TODO: 本番用キーに差し替え
 
-    const nameInput    = form.querySelector('#cf-name');
-    const emailInput   = form.querySelector('#cf-email');
-    const typeSelect   = form.querySelector('#cf-type');
-    const messageInput = form.querySelector('#cf-message');
-    const submitBtn    = form.querySelector('.contact__form-submit .btn');
+    const nameInput      = form.querySelector('#cf-name');
+    const emailInput     = form.querySelector('#cf-email');
+    const typeCheckboxes = form.querySelectorAll('.contact__checkbox-input');
+    const typeValueInput = form.querySelector('#cf-type-value');
+    const messageInput   = form.querySelector('#cf-message');
+    const submitBtn      = form.querySelector('.contact__form-submit .btn');
     const submitBtnDefaultText = submitBtn ? submitBtn.textContent : '';
+
+    // Toggle the chip's checked look and keep the hidden field in sync
+    typeCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            checkbox.closest('.contact__checkbox').classList.toggle('is-checked', checkbox.checked);
+            typeValueInput.value = Array.from(typeCheckboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value)
+                .join('、');
+        });
+    });
 
     function validate() {
         if (!nameInput.value.trim()) {
@@ -202,8 +214,8 @@
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
             return { field: emailInput, message: 'メールアドレスの形式が正しくありません。' };
         }
-        if (!typeSelect.value) {
-            return { field: typeSelect, message: 'お問い合わせ種別を選択してください。' };
+        if (![...typeCheckboxes].some(cb => cb.checked)) {
+            return { field: typeCheckboxes[0], message: 'お問い合わせ種別を1つ以上選択してください。' };
         }
         if (!messageInput.value.trim()) {
             return { field: messageInput, message: 'お問い合わせ内容を入力してください。' };
@@ -245,6 +257,8 @@
             if (result.success) {
                 alert('お問い合わせありがとうございました。');
                 form.reset();
+                typeCheckboxes.forEach(cb => cb.closest('.contact__checkbox').classList.remove('is-checked'));
+                typeValueInput.value = '';
             } else {
                 alert('送信に失敗しました。時間をおいて再度お試しください。');
             }

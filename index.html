@@ -249,14 +249,26 @@
                             </div>
                         </div>
                         <div class="contact__form-group">
-                            <label class="contact__label" for="cf-type">お問い合わせ種別 <span class="contact__required">*</span></label>
-                            <select class="contact__select" id="cf-type" name="type">
-                                <option value="" disabled selected>選択してください</option>
-                                <option value="air">業務用エアコン設置工事</option>
-                                <option value="pipe">冷媒配管施工</option>
-                                <option value="freon">フロンガス回収・処理</option>
-                                <option value="other">その他</option>
-                            </select>
+                            <span class="contact__label" id="cf-type-label">お問い合わせ種別 <span class="contact__required">*</span>（複数選択可）</span>
+                            <div class="contact__checkbox-group" id="cf-type" role="group" aria-labelledby="cf-type-label">
+                                <label class="contact__checkbox">
+                                    <input type="checkbox" class="contact__checkbox-input" value="業務用エアコン設置工事">
+                                    <span>業務用エアコン設置工事</span>
+                                </label>
+                                <label class="contact__checkbox">
+                                    <input type="checkbox" class="contact__checkbox-input" value="冷媒配管施工">
+                                    <span>冷媒配管施工</span>
+                                </label>
+                                <label class="contact__checkbox">
+                                    <input type="checkbox" class="contact__checkbox-input" value="フロンガス回収・処理">
+                                    <span>フロンガス回収・処理</span>
+                                </label>
+                                <label class="contact__checkbox">
+                                    <input type="checkbox" class="contact__checkbox-input" value="その他">
+                                    <span>その他</span>
+                                </label>
+                            </div>
+                            <input type="hidden" name="type" id="cf-type-value">
                         </div>
                         <div class="contact__form-group">
                             <label class="contact__label" for="cf-message">お問い合わせ内容 <span class="contact__required">*</span></label>

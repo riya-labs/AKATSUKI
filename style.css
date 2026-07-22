@@ -942,6 +942,67 @@ a.news-item__title:hover { color: var(--navy-2); }
     color: var(--text);
 }
 
+.contact__checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contact__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: var(--r);
+    padding: 10px 16px;
+    font-size: .88rem;
+    color: var(--text-2);
+    cursor: pointer;
+    box-shadow: var(--sh-sm);
+    transition: border-color var(--ease), background var(--ease), color var(--ease);
+}
+
+.contact__checkbox:hover { border-color: var(--navy-3); }
+
+.contact__checkbox-input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    transition: border-color var(--ease), background var(--ease);
+}
+
+.contact__checkbox-input::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    transform: scale(0);
+    transition: transform var(--ease);
+    box-shadow: inset 1em 1em var(--white);
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.contact__checkbox-input:checked {
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+.contact__checkbox-input:checked::before { transform: scale(1); }
+
+.contact__checkbox:has(.contact__checkbox-input:checked),
+.contact__checkbox.is-checked {
+    border-color: var(--orange);
+    background: rgba(194,85,28,.06);
+    color: var(--navy);
+}
+
 .contact__input:focus,
 .contact__select:focus,
 .contact__textarea:focus {
@@ -1103,12 +1164,12 @@ a.news-item__title:hover { color: var(--navy-2); }
         position: fixed;
         top: var(--header);
         left: 0; right: 0;
-        height: calc(100vh - var(--header));
+        max-height: calc(100vh - var(--header));
         z-index: 300;
         display: flex;
         align-items: center;
         background: var(--white);
-        padding: 0 40px;
+        padding: 12px 40px;
         transform: translateY(-16px);
         opacity: 0;
         visibility: hidden;
@@ -1213,8 +1274,11 @@ a.news-item__title:hover { color: var(--navy-2); }
     /* Contact */
     .contact__form-row { grid-template-columns: 1fr; gap: 0; }
 
-    /* Footer */
-    .footer__main   { gap: 28px; }
+    /* Footer: brand stays left-aligned as before; only the nav columns are centered */
+    .footer__main   { flex-direction: column; gap: 28px; }
+    .footer__brand  { flex: 0 0 auto; width: 100%; }
+    .footer__col    { align-self: center; text-align: center; }
+    .footer__col-title::before { display: none; }
     .footer__bottom { flex-direction: column; gap: 14px; text-align: center; }
 }
 
