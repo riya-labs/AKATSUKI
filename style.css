@@ -1368,20 +1368,24 @@ a.news-item__title:hover { color: var(--navy-2); }
     /* Contact */
     .contact__form-row { grid-template-columns: 1fr; gap: 0; }
 
-    /* Footer: fully centered on mobile for a consistent, symmetric layout */
-    .footer__main   { flex-direction: column; gap: 32px; }
-    .footer__brand  { flex: 0 0 auto; width: 100%; display: flex; flex-direction: column; align-items: center; }
+    /* Footer: fully centered on mobile; nav tabs moved up right below the company name */
+    .footer__main   { flex-direction: column; gap: 0; }
+    .footer__brand  { display: contents; }
+    .footer__logo   { order: 1; margin: 0 0 32px; }
+    .footer__nav    { order: 2; display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; width: 100%; margin-bottom: 32px; }
     .footer__desc {
+        order: 3;
         max-width: none;
         width: fit-content;
         text-align: left;
+        margin-bottom: 16px;
     }
     .footer__license-list {
+        order: 4;
         max-width: none;
         width: fit-content;
-        margin-top: 16px;
+        margin-top: 0;
     }
-    .footer__nav    { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; width: 100%; }
     .footer__col    { text-align: center; }
     .footer__col-title::after { left: 50%; transform: translateX(-50%); }
     .footer__bottom { flex-direction: column; gap: 14px; text-align: center; }
