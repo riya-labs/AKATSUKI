@@ -86,22 +86,11 @@
             align-items: flex-end;
             text-align: right;
         }
-        .message__sign-role {
-            font-family: "HGS行書体", "HG行書体", "HGP行書体", "HG正楷書体-PRO", "HGSeikaishotaiPRO", "HG正楷書体", 'KouzanGyousho', 'Yuji Mai', var(--serif);
-            font-size: .95rem;
-            color: var(--navy-dark);
-            letter-spacing: .12em;
-            margin-bottom: 8px;
-        }
-        .message__sign-name {
-            display: inline-block;
-            font-family: "HGS行書体", "HG行書体", "HGP行書体", "HG正楷書体-PRO", "HGSeikaishotaiPRO", "HG正楷書体", 'KouzanGyousho', 'Yuji Mai', var(--serif);
-            font-size: 2.1rem;
-            font-weight: 400;
-            color: var(--navy-dark);
-            letter-spacing: .04em;
-            line-height: 1;
-            transform: rotate(-2deg);
+        .message__sign-img {
+            width: 260px;
+            max-width: 60%;
+            height: auto;
+            mix-blend-mode: multiply;
         }
 
         /* ========== Company Info (会社概要) ========== */
@@ -112,7 +101,8 @@
         .company .container { text-align: center; }
         .company__table-wrap {
             display: inline-block;
-            max-width: 100%;
+            width: 100%;
+            max-width: 620px;
             text-align: left;
             background: var(--white);
             border-radius: var(--r-lg);
@@ -164,10 +154,28 @@
             margin: 0;
         }
         .company__license-list li {
-            padding: 3px 0;
+            padding: 4px 0;
             display: flex;
             align-items: flex-start;
             gap: 8px;
+        }
+        .company__license-list li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--orange);
+            margin-top: 9px;
+            flex-shrink: 0;
+        }
+        .company__license-sub {
+            display: block;
+            font-size: .82rem;
+            color: var(--gray);
+            margin-top: 3px;
+        }
+        .company__license-sub + .company__license-sub {
+            margin-top: 1px;
         }
 
         /* ========== History (沿革) ========== */
@@ -322,8 +330,7 @@
                         今後とも格別のご支援、ご愛顧を賜りますよう、よろしくお願い申し上げます。
                     </p>
                     <div class="message__sign">
-                        <p class="message__sign-role">代表取締役社長</p>
-                        <p class="message__sign-name">蝦名 暁</p>
+                        <img src="images/サイン.jpg" alt="代表取締役社長 蝦名 暁" class="message__sign-img">
                     </div>
                 </div>
             </div>
@@ -368,8 +375,19 @@
                                 <th scope="row">許認可</th>
                                 <td>
                                     <ul class="company__license-list">
-                                        <li>建設業許可（管工事業）</li>
-                                        <li>第一種フロン類充填回収業者（東京都・埼玉県）</li>
+                                        <li>
+                                            <span>
+                                                建設業許可（管工事業）
+                                                <span class="company__license-sub">埼玉県知事許可（般-7）第72163号</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                第一種フロン類充填回収業者
+                                                <span class="company__license-sub">埼玉県知事登録　第12080094号</span>
+                                                <span class="company__license-sub">東京都知事登録　第13107986号</span>
+                                            </span>
+                                        </li>
                                     </ul>
                                 </td>
                             </tr>
@@ -377,7 +395,7 @@
                                 <th scope="row">認定</th>
                                 <td>
                                     <div class="company__cert-row">
-                                        <span>令和8年度<br>事業継続力強化計画<br>経済産業大臣認定</span>
+                                        <span>令和8年度　事業継続力強化計画<br>経済産業大臣認定</span>
                                         <img src="images/認定ロゴ.png" alt="令和8年度事業継続力強化計画認定（経済産業省）" class="company__cert-logo" loading="lazy">
                                     </div>
                                 </td>

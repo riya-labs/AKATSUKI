@@ -654,7 +654,7 @@ button { font-family: inherit; }
 
 .stat-item__label {
     font-size: .8rem;
-    color: rgba(255,255,255,.45);
+    color: rgba(255,255,255,.68);
     letter-spacing: .07em;
 }
 
@@ -668,7 +668,7 @@ button { font-family: inherit; }
 
 .cases__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 26px;
 }
 
@@ -703,16 +703,17 @@ button { font-family: inherit; }
 
 /* Thumbnail */
 .case-card__thumb {
-    height: 210px;
+    aspect-ratio: 4 / 3;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
-.case-card__thumb--office  { background: linear-gradient(140deg, #234E70 0%, #3D7196 60%, #16324A 100%); }
-.case-card__thumb--factory { background: linear-gradient(140deg, #2C4A63 0%, #5F7D95 60%, #1D3547 100%); }
-.case-card__thumb--medical { background: linear-gradient(140deg, #24485C 0%, #4A7B93 60%, #17323F 100%); }
+.case-card__thumb--office    { background: linear-gradient(140deg, #234E70 0%, #3D7196 60%, #16324A 100%); }
+.case-card__thumb--school    { background: linear-gradient(140deg, #24485C 0%, #4A7B93 60%, #17323F 100%); }
+.case-card__thumb--tenant    { background: linear-gradient(140deg, #2A567A 0%, #4A82A6 60%, #1A3A52 100%); }
+.case-card__thumb--warehouse { background: linear-gradient(140deg, #2C4A63 0%, #5F7D95 60%, #1D3547 100%); }
 
 /* Subtle pattern overlay */
 .case-card__thumb::before {
@@ -1097,7 +1098,7 @@ a.news-item__title:hover { color: var(--navy-2); }
 
 .footer__desc {
     font-size: .82rem;
-    color: rgba(255,255,255,.38);
+    color: rgba(255,255,255,.68);
     line-height: 1.9;
     max-width: 300px;
 }
@@ -1112,7 +1113,7 @@ a.news-item__title:hover { color: var(--navy-2); }
     align-items: flex-start;
     gap: 8px;
     font-size: .76rem;
-    color: rgba(255,255,255,.38);
+    color: rgba(255,255,255,.68);
     line-height: 1.7;
 }
 .footer__license-list li + li { margin-top: 6px; }
@@ -1156,12 +1157,12 @@ a.news-item__title:hover { color: var(--navy-2); }
 .footer__col ul li {
     margin-bottom: 11px;
     font-size: .84rem;
-    color: rgba(255,255,255,.48);
+    color: rgba(255,255,255,.72);
     line-height: 1.6;
 }
 .footer__col a {
     font-size: .84rem;
-    color: rgba(255,255,255,.48);
+    color: rgba(255,255,255,.72);
     transition: color var(--ease);
 }
 .footer__col a:hover { color: var(--white); }
@@ -1175,7 +1176,7 @@ a.news-item__title:hover { color: var(--navy-2); }
 
 .footer__copy {
     font-size: .75rem;
-    color: rgba(255,255,255,.25);
+    color: rgba(255,255,255,.65);
 }
 
 .footer__bottom-right {
@@ -1190,17 +1191,17 @@ a.news-item__title:hover { color: var(--navy-2); }
 }
 .footer__links a {
     font-size: .75rem;
-    color: rgba(255,255,255,.25);
+    color: rgba(255,255,255,.65);
     transition: color var(--ease);
 }
-.footer__links a:hover { color: rgba(255,255,255,.55); }
+.footer__links a:hover { color: var(--white); }
 
 .footer__totop {
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: .75rem;
-    color: rgba(255,255,255,.55);
+    color: rgba(255,255,255,.75);
     white-space: nowrap;
     transition: color var(--ease), transform var(--ease);
 }
