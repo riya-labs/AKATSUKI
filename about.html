@@ -165,8 +165,14 @@
             height: 5px;
             border-radius: 50%;
             background: var(--orange);
-            margin-top: 9px;
+            margin-top: 11px;
             flex-shrink: 0;
+        }
+        .company__license-list li.is-single {
+            align-items: center;
+        }
+        .company__license-list li.is-single::before {
+            margin-top: 0;
         }
         .company__license-sub {
             display: block;
@@ -369,7 +375,12 @@
                             </tr>
                             <tr>
                                 <th scope="row">事業内容</th>
-                                <td>建設業（空調設備工事業）</td>
+                                <td>
+                                    <ul class="company__license-list">
+                                        <li class="is-single">建設業（空調設備工事業）</li>
+                                        <li class="is-single">空気調和設備工事</li>
+                                    </ul>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">許認可</th>
