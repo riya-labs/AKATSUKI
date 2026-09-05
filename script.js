@@ -176,6 +176,104 @@
 })();
 
 
+/* ----- Case card photo sliders (施工事例) -----
+   Autoplay crossfade + gentle zoom, clickable dots, swipe on touch devices.
+   Pauses autoplay on hover/focus/touch and restarts smoothly after interaction. */
+(function () {
+    const sliders = document.querySelectorAll('[data-slider]');
+    if (!sliders.length) return;
+
+    const AUTOPLAY_MS = 3200;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    sliders.forEach(root => {
+        const slides = Array.from(root.querySelectorAll('.case-card__thumb-slide'));
+        const dotsWrap = root.querySelector('[data-dots]');
+        if (slides.length < 2) {
+            if (slides[0]) slides[0].classList.add('is-active');
+            return;
+        }
+
+        let current = 0;
+        let timer = null;
+
+        const dots = slides.map((_, i) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'case-card__thumb-dot';
+            dot.setAttribute('aria-label', `${i + 1}枚目の画像を表示`);
+            dot.addEventListener('click', e => {
+                e.preventDefault();
+                e.stopPropagation();
+                goTo(i);
+                restartAutoplay();
+            });
+            if (dotsWrap) dotsWrap.appendChild(dot);
+            return dot;
+        });
+
+        function render() {
+            slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
+            dots.forEach((dot, i) => dot.classList.toggle('is-active', i === current));
+        }
+
+        function goTo(index) {
+            current = (index + slides.length) % slides.length;
+            render();
+        }
+
+        function next() { goTo(current + 1); }
+        function prev() { goTo(current - 1); }
+
+        function stopAutoplay() {
+            if (timer) clearInterval(timer);
+            timer = null;
+        }
+
+        function startAutoplay() {
+            if (prefersReducedMotion) return;
+            stopAutoplay();
+            timer = setInterval(next, AUTOPLAY_MS);
+        }
+
+        function restartAutoplay() { startAutoplay(); }
+
+        root.addEventListener('mouseenter', stopAutoplay);
+        root.addEventListener('mouseleave', startAutoplay);
+        root.addEventListener('focusin', stopAutoplay);
+        root.addEventListener('focusout', startAutoplay);
+
+        // Swipe support (touch devices)
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let isTouching = false;
+
+        root.addEventListener('touchstart', e => {
+            const t = e.touches[0];
+            touchStartX = t.clientX;
+            touchStartY = t.clientY;
+            isTouching = true;
+            stopAutoplay();
+        }, { passive: true });
+
+        root.addEventListener('touchend', e => {
+            if (!isTouching) return;
+            isTouching = false;
+            const t = e.changedTouches[0];
+            const dx = t.clientX - touchStartX;
+            const dy = t.clientY - touchStartY;
+            if (Math.abs(dx) > 30 && Math.abs(dx) > Math.abs(dy)) {
+                if (dx < 0) next(); else prev();
+            }
+            restartAutoplay();
+        }, { passive: true });
+
+        render();
+        startAutoplay();
+    });
+})();
+
+
 /* ----- Contact form: Web3Forms submission -----
    ※ access_key はテスト用キーです。本番公開前に Web3Forms (https://web3forms.com/) で
    取得した本番用のアクセスキーに差し替えてください。 */

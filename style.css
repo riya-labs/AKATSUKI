@@ -734,16 +734,33 @@ button { font-family: inherit; }
     background: linear-gradient(to top, rgba(22,50,74,.55), transparent);
 }
 
-.case-card__thumb img {
+.case-card__thumb-slide {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    transition: transform .6s ease;
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 1.6s ease, transform 7s ease-out;
+    pointer-events: none;
 }
-.case-card:hover .case-card__thumb img { transform: scale(1.08); }
+
+/* Interactive slider: JS toggles .is-active on the current slide/dot.
+   Fading a slide out and the next one in at the same time (both transition
+   on the same "opacity" duration) produces a true crossfade, and the slow
+   transform transition gives each photo a gentle, continuous Ken Burns zoom. */
+.case-card__thumb-slide.is-active {
+    opacity: 1;
+    transform: scale(1.06);
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .case-card__thumb-slide { transition: opacity .3s ease; }
+    .case-card__thumb-slide.is-active { transform: scale(1); }
+}
 
 .case-card__thumb-icon {
     position: absolute;
@@ -762,6 +779,32 @@ button { font-family: inherit; }
     padding: 4px 12px;
     border-radius: 100px;
     letter-spacing: .06em;
+}
+
+/* Dot indicators */
+.case-card__thumb-dots {
+    position: absolute;
+    bottom: 14px;
+    right: 18px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.case-card__thumb-dot {
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,.5);
+    cursor: pointer;
+    transition: background var(--ease), transform var(--ease);
+}
+.case-card__thumb-dot:hover { background: rgba(255,255,255,.8); }
+.case-card__thumb-dot.is-active {
+    background: var(--white);
+    transform: scale(1.35);
 }
 
 .case-card__body { padding: 28px 30px; }
