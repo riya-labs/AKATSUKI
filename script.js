@@ -183,7 +183,7 @@
     const sliders = document.querySelectorAll('[data-slider]');
     if (!sliders.length) return;
 
-    const AUTOPLAY_MS = 3200;
+    const AUTOPLAY_MS = 5000;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     sliders.forEach(root => {
