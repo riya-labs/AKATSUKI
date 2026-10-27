@@ -184,6 +184,31 @@
             margin-top: 1px;
         }
 
+        .company__license-body { flex: 1; min-width: 0; }
+        .company__license-regs {
+            margin: 8px 0 0;
+            border-top: 1px solid var(--border);
+            font-size: .82rem;
+            line-height: 1.6;
+        }
+        .company__license-regs div {
+            display: grid;
+            grid-template-columns: 5em 1fr;
+            gap: 12px;
+            padding: 5px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .company__license-regs dt {
+            color: var(--text-2);
+            font-weight: 600;
+        }
+        .company__license-regs dd {
+            margin: 0;
+            color: var(--gray);
+            font-variant-numeric: tabular-nums;
+            overflow-wrap: anywhere;
+        }
+
         /* ========== History (沿革) ========== */
         .history {
             padding: 128px 0;
@@ -271,6 +296,8 @@
             .company__table th,
             .company__table td { padding: 14px 16px; }
             .company__table th { width: 100px; font-size: .75rem; }
+            .company__license-regs { font-size: .78rem; }
+            .company__license-regs div { grid-template-columns: 4.5em 1fr; gap: 8px; }
         }
     </style>
 </head>
@@ -389,16 +416,18 @@
                                             </span>
                                         </li>
                                         <li>
-                                            <span>
+                                            <div class="company__license-body">
                                                 第一種フロン類充填回収業者
-                                                <span class="company__license-sub">東京都知事登録　第13107986号</span>
-                                                <span class="company__license-sub">埼玉県知事登録　第12080094号</span>
-                                                <span class="company__license-sub">千葉県知事登録　第12A115247号</span>
-                                                <span class="company__license-sub">神奈川県知事登録　神(気水)第1-4964号</span>
-                                                <span class="company__license-sub">茨城県知事登録　第13875号</span>
-                                                <span class="company__license-sub">栃木県知事登録　第1-2808号</span>
-                                                <span class="company__license-sub">群馬県知事登録　第102868号</span>
-                                            </span>
+                                                <dl class="company__license-regs">
+                                                    <div><dt>東京都</dt><dd>13107986</dd></div>
+                                                    <div><dt>埼玉県</dt><dd>埼玉県知事第12080094号</dd></div>
+                                                    <div><dt>千葉県</dt><dd>12A115247</dd></div>
+                                                    <div><dt>神奈川県</dt><dd>神(気水)第1-4964号</dd></div>
+                                                    <div><dt>茨城県</dt><dd>茨第13875号</dd></div>
+                                                    <div><dt>栃木県</dt><dd>栃木県第1-2808号</dd></div>
+                                                    <div><dt>群馬県</dt><dd>102868</dd></div>
+                                                </dl>
+                                            </div>
                                         </li>
                                     </ul>
                                 </td>
