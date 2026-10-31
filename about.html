@@ -80,22 +80,21 @@
             margin-bottom: 24px;
         }
         .message__sign {
-            margin-top: 64px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            text-align: right;
+            width: 260px;
+            max-width: 60%;
+            margin: 64px 0 0 auto;
         }
         .message__sign-title {
-            /* 筆の払いより少し内側に寄せ、上側の余白ぶん詰めてサインに近づける */
-            margin: 0 calc(24px - .2em) -6px 0;
+            /* 画像左の余白ぶん(幅の5.5%)内側に寄せて「蝦」の書き出しに揃え、上側の余白ぶん詰めてサインに近づける */
+            margin: 0 0 -6px;
+            padding-left: 5.5%;
             font-size: .92rem;
             color: var(--text-2);
             letter-spacing: .2em;
         }
         .message__sign-img {
-            width: 260px;
-            max-width: 60%;
+            display: block;
+            width: 100%;
             height: auto;
             mix-blend-mode: multiply;
         }
@@ -209,7 +208,7 @@
         .company__license-regs dt {
             padding-right: 14px;
             color: var(--text-2);
-            font-weight: 600;
+            font-weight: 400;
         }
         .company__license-regs dd {
             margin: 0;
@@ -363,16 +362,19 @@
                         お客様の信頼に誠実に応えます
                     </h2>
                     <p class="message__text">
-                        当社は、建築物における業務用空調機器設置工事を中心に、高品質な設備工事サービスの提供を目的として設立いたしました。
+                        当社は、建築物における業務用空調設備工事を主たる事業とし、高品質な施工の提供を目的として設立いたしました。
                     </p>
                     <p class="message__text">
-                        長年にわたり培ってきた豊富な実務経験と技術力を活かし、安全を最優先に考えながら、品質の高い施工を提供しております。お客様のご要望に真摯に向き合い、快適で安心できる環境づくりに貢献することを使命として、一つ一つの工事に誠実に取り組んでまいります。
+                        長年にわたり培ってまいりました豊富な実務経験と専門技術を基盤に、安全管理の徹底と施工品質の確保に努め、確かな技術に裏付けられた施工を実践しております。
                     </p>
                     <p class="message__text">
-                        これからも技術の向上と品質管理の徹底に努め、信頼されるパートナーとして地域社会の発展に貢献してまいります。
+                        また、お客様の多様なご要望に的確にお応えするとともに、一つひとつの工事に誠実かつ責任ある姿勢で臨み、確実な施工を通じて、快適で安心できる建築環境の実現に貢献してまいります。
                     </p>
                     <p class="message__text">
-                        今後とも格別のご支援、ご愛顧を賜りますよう、よろしくお願い申し上げます。
+                        今後も、さらなる技術力の向上と品質の追求に努め、お客様ならびに関係各位との信頼関係を大切にし、より一層の事業発展に努めてまいります。
+                    </p>
+                    <p class="message__text">
+                        引き続き、格別のご支援とご愛顧を賜りますよう、謹んでお願い申し上げます。
                     </p>
                     <div class="message__sign">
                         <p class="message__sign-title">代表取締役</p>
